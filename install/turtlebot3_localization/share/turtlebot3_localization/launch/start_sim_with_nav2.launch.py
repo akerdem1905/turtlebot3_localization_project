@@ -1,1 +1,0 @@
-/home/apo/turtlebot3_localization_project/launch/start_sim_with_nav2.launch.py

@@ -1,0 +1,6 @@
+source;share/particle_filter_node/hook/cmake_prefix_path.dsv
+source;share/particle_filter_node/hook/cmake_prefix_path.sh
+source;share/particle_filter_node/local_setup.bash
+source;share/particle_filter_node/local_setup.dsv
+source;share/particle_filter_node/local_setup.sh
+source;share/particle_filter_node/local_setup.zsh

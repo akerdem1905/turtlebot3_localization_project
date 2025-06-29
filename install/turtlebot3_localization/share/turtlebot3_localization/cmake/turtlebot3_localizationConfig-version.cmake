@@ -1,1 +1,0 @@
-/home/apo/turtlebot3_localization_project/build/turtlebot3_localization/ament_cmake_core/turtlebot3_localizationConfig-version.cmake
