@@ -16,7 +16,7 @@ set(_particle_filter_node_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT particle_filter_node_FIND_QUIETLY)
-  message(STATUS "Found particle_filter_node: 0.0.1 (${particle_filter_node_DIR})")
+  message(STATUS "Found particle_filter_node: 0.1.0 (${particle_filter_node_DIR})")
 endif()
 
 # warn when using a deprecated package

@@ -17,7 +17,7 @@ struct PFParticle {
 class ParticleFilterNode : public rclcpp::Node {
 public:
     ParticleFilterNode() : Node("particle_filter_node"), gen_(std::random_device{}()) {
-        this->declare_parameter("use_sim_time", true);
+        //this->declare_parameter("use_sim_time", true);
         particle_count_ = this->declare_parameter("num_particles", 1000);
         wheel_radius_ = this->declare_parameter("wheel_radius", 0.033);
         wheel_base_ = this->declare_parameter("wheelbase", 0.287);

@@ -1,112 +1,153 @@
-#include "turtlebot3_localization/kf.hpp"
+#include <cmath>
+#include <random>
+#include <Eigen/Dense>
 
-KalmanFilterNode::KalmanFilterNode() : Node("kf_node") {
-    initKalman();
+#include "rclcpp/rclcpp.hpp"
+#include "sensor_msgs/msg/imu.hpp"
+#include "sensor_msgs/msg/joint_state.hpp"
+#include "geometry_msgs/msg/pose_with_covariance_stamped.hpp"
+#include "message_filters/subscriber.h"
+#include "message_filters/sync_policies/approximate_time.h"
 
-    imu_sub_.subscribe(this, "/imu");
-    joint_sub_.subscribe(this, "/joint_states");
+class KalmanFilterNode : public rclcpp::Node {
+public:
+    KalmanFilterNode() : Node("kalman_filter_node") {
+        //this->declare_parameter("use_sim_time", true);
 
-    sync_ = std::make_shared<Sync>(Sync(10), imu_sub_, joint_sub_);
-    sync_->registerCallback(std::bind(&KalmanFilterNode::callback, this, std::placeholders::_1, std::placeholders::_2));
+        state_ = Eigen::VectorXd::Zero(3);      // x, y, theta
+        covariance_ = Eigen::MatrixXd::Identity(3, 3) * 0.01;
+        Q_ = Eigen::MatrixXd::Identity(3, 3) * 0.001; // process noise
+        R_ = Eigen::MatrixXd::Identity(2, 2) * 0.05;   // measurement noise
 
-    cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
-        "/cmd_vel", 10, std::bind(&KalmanFilterNode::cmdVelCallback, this, std::placeholders::_1)
-    );
+        imu_sub_.subscribe(this, "/imu");
+        joint_sub_.subscribe(this, "/joint_states");
+        sync_ = std::make_shared<message_filters::Synchronizer<SyncPolicy>>(SyncPolicy(10), imu_sub_, joint_sub_);
+        sync_->registerCallback(std::bind(&KalmanFilterNode::callback, this, std::placeholders::_1, std::placeholders::_2));
 
-    odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("/kf_odom", 10);
-    last_time_ = this->now();
-
-    RCLCPP_INFO(this->get_logger(), "KF Node ready.");
-}
-
-void KalmanFilterNode::initKalman() {
-    x_.setZero();
-    P_ = Eigen::MatrixXd::Identity(6, 6);
-    Q_ = Eigen::MatrixXd::Identity(6, 6) * 0.01;
-    R_ = Eigen::MatrixXd::Identity(3, 3) * 0.05;
-
-    C_.setZero();
-    C_(0, 1) = 1.0;
-    C_(1, 3) = 1.0;
-    C_(2, 5) = 1.0;
-
-    u_.setZero();
-}
-
-void KalmanFilterNode::cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg) {
-    u_(0) = msg->linear.x;
-    u_(1) = msg->angular.z;
-}
-
-void KalmanFilterNode::callback(const sensor_msgs::msg::Imu::ConstSharedPtr imu,
-                                 const sensor_msgs::msg::JointState::ConstSharedPtr joint) {
-    double dt = (this->now() - last_time_).seconds();
-    if (dt <= 0 || dt > 1.0) {
+        pub_ = this->create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("/kf_prediction", 10);
         last_time_ = this->now();
-        return;
+
+        RCLCPP_INFO(this->get_logger(), "Kalman Filter Node gestartet");
     }
 
-    predict(dt);
-    update(imu, joint);
-    publish();
+private:
+    using SyncPolicy = message_filters::sync_policies::ApproximateTime<sensor_msgs::msg::Imu, sensor_msgs::msg::JointState>;
 
-    last_time_ = this->now();
-}
+    Eigen::VectorXd state_;
+    Eigen::MatrixXd covariance_;
+    Eigen::MatrixXd Q_;
+    Eigen::MatrixXd R_;
 
-void KalmanFilterNode::predict(double dt) {
-    A_.setIdentity();
-    A_(0, 1) = dt;
-    A_(2, 3) = dt;
-    A_(4, 5) = dt;
+    rclcpp::Time last_time_;
 
-    B_.setZero();
-    B_(1, 0) = 1.0;
-    B_(5, 1) = 1.0;
+    message_filters::Subscriber<sensor_msgs::msg::Imu> imu_sub_;
+    message_filters::Subscriber<sensor_msgs::msg::JointState> joint_sub_;
+    std::shared_ptr<message_filters::Synchronizer<SyncPolicy>> sync_;
+    rclcpp::Publisher<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr pub_;
 
-    x_ = A_ * x_ + B_ * u_;
-    P_ = A_ * P_ * A_.transpose() + Q_;
-}
-
-void KalmanFilterNode::update(const sensor_msgs::msg::Imu::ConstSharedPtr imu,
-                               const sensor_msgs::msg::JointState::ConstSharedPtr joint) {
-    double v = 0.0;
-    for (size_t i = 0; i < joint->name.size(); ++i) {
-        if (joint->name[i] == "wheel_left_joint" || joint->name[i] == "wheel_right_joint") {
-            v += joint->velocity[i];
+    void callback(const sensor_msgs::msg::Imu::ConstSharedPtr imu_msg,
+                  const sensor_msgs::msg::JointState::ConstSharedPtr joint_msg) {
+        double dt = (this->now() - last_time_).seconds();
+        if (dt <= 0.0 || dt > 0.5) {
+            last_time_ = this->now();
+            return;
         }
+        last_time_ = this->now();
+
+        auto [v, omega] = computeVelocities(joint_msg);
+        predict(dt, v, omega);
+        correct(imu_msg);
+        publish();
     }
-    v = (v * 0.5) * 0.033;
 
-    Eigen::VectorXd z(3);
-    z << v, 0.0, imu->angular_velocity.z;
+    std::pair<double, double> computeVelocities(const sensor_msgs::msg::JointState::ConstSharedPtr joint_msg) {
+        double v_left = 0.0, v_right = 0.0;
+        double wheel_radius = 0.033;
+        double wheel_base = 0.287;
 
-    Eigen::VectorXd y = z - C_ * x_;
-    Eigen::MatrixXd S = C_ * P_ * C_.transpose() + R_;
-    Eigen::MatrixXd K = P_ * C_.transpose() * S.inverse();
+        for (size_t i = 0; i < joint_msg->name.size(); ++i) {
+            if (joint_msg->name[i] == "wheel_left_joint")
+                v_left = joint_msg->velocity[i] * wheel_radius;
+            else if (joint_msg->name[i] == "wheel_right_joint")
+                v_right = joint_msg->velocity[i] * wheel_radius;
+        }
+        double v = (v_left + v_right) / 2.0;
+        double omega = (v_right - v_left) / wheel_base;
+        return {v, omega};
+    }
 
-    x_ = x_ + K * y;
-    P_ = (Eigen::MatrixXd::Identity(6, 6) - K * C_) * P_;
-}
+    void predict(double dt, double v, double omega) {
+        double theta = state_(2);
 
-void KalmanFilterNode::publish() {
-    auto msg = nav_msgs::msg::Odometry();
-    msg.header.stamp = this->now();
-    msg.header.frame_id = "odom";
-    msg.child_frame_id = "base_link";
+        Eigen::VectorXd u(2);
+        u << v * dt, omega * dt;
 
-    msg.pose.pose.position.x = x_(0);
-    msg.pose.pose.position.y = x_(2);
+        Eigen::VectorXd predicted = state_;
+        predicted(0) += u(0) * std::cos(theta);
+        predicted(1) += u(0) * std::sin(theta);
+        predicted(2) += u(1);
 
-    tf2::Quaternion q;
-    q.setRPY(0, 0, x_(4));
-    msg.pose.pose.orientation.x = q.x();
-    msg.pose.pose.orientation.y = q.y();
-    msg.pose.pose.orientation.z = q.z();
-    msg.pose.pose.orientation.w = q.w();
+        Eigen::MatrixXd A = Eigen::MatrixXd::Identity(3, 3);
+        A(0, 2) = -u(0) * std::sin(theta);
+        A(1, 2) = u(0) * std::cos(theta);
 
-    msg.twist.twist.linear.x = x_(1);
-    msg.twist.twist.linear.y = x_(3);
-    msg.twist.twist.angular.z = x_(5);
+        Eigen::MatrixXd B(3, 2);
+        B << std::cos(theta), 0,
+             std::sin(theta), 0,
+             0, 1;
 
-    odom_pub_->publish(msg);
+        state_ = predicted;
+        covariance_ = A * covariance_ * A.transpose() + Q_;
+    }
+
+    void correct(const sensor_msgs::msg::Imu::ConstSharedPtr imu_msg) {
+        double omega_measured = imu_msg->angular_velocity.z;
+
+        Eigen::VectorXd z(1);
+        z << omega_measured;
+
+        Eigen::MatrixXd H(1, 3);
+        H << 0, 0, 1;
+
+        Eigen::MatrixXd S = H * covariance_ * H.transpose() + R_.block(0,0,1,1);
+        Eigen::MatrixXd K = covariance_ * H.transpose() * S.inverse();
+
+        Eigen::VectorXd y = z - H * state_;
+        state_ += K * y;
+        covariance_ = (Eigen::MatrixXd::Identity(3, 3) - K * H) * covariance_;
+
+        state_(2) = normalizeAngle(state_(2));
+    }
+
+    void publish() {
+        auto msg = geometry_msgs::msg::PoseWithCovarianceStamped();
+        msg.header.stamp = this->now();
+        msg.header.frame_id = "odom";
+
+        msg.pose.pose.position.x = state_(0);
+        msg.pose.pose.position.y = state_(1);
+        msg.pose.pose.orientation.z = std::sin(state_(2) / 2.0);
+        msg.pose.pose.orientation.w = std::cos(state_(2) / 2.0);
+
+        msg.pose.covariance[0] = covariance_(0, 0);
+        msg.pose.covariance[7] = covariance_(1, 1);
+        msg.pose.covariance[35] = covariance_(2, 2);
+
+        pub_->publish(msg);
+
+        RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
+            "KF: x=%.3f, y=%.3f, θ=%.3f", state_(0), state_(1), state_(2));
+    }
+
+    double normalizeAngle(double angle) {
+        while (angle > M_PI) angle -= 2.0 * M_PI;
+        while (angle < -M_PI) angle += 2.0 * M_PI;
+        return angle;
+    }
+};
+int main(int argc, char* argv[]) {
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<KalmanFilterNode>());
+    rclcpp::shutdown();
+    return 0;
 }

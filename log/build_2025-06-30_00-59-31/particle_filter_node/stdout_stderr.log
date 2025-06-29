@@ -1,0 +1,50 @@
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rclcpp_action: 28.1.9 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+-- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+-- Found message_filters: 4.11.6 (/opt/ros/jazzy/share/message_filters/cmake)
+-- Found nav2_msgs: 1.3.7 (/opt/ros/jazzy/share/nav2_msgs/cmake)
+-- Configuring done (0.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/apo/ProLab/build/particle_filter_node
+[ 50%] [32mBuilding CXX object CMakeFiles/pf_node.dir/src/pf.cpp.o[0m
+[01m[K/home/apo/ProLab/src/pf.cpp:[m[K In member function ‘[01m[Kvoid ParticleFilterNode::[01;32m[Kcorrect[m[K(double, double)[m[K’:
+[01m[K/home/apo/ProLab/src/pf.cpp:119:25:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kv_meas[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  119 |     void correct([01;35m[Kdouble v_meas[m[K, double omega_meas) {
+      |                  [01;35m[K~~~~~~~^~~~~~[m[K
+[01m[K/home/apo/ProLab/src/pf.cpp:119:40:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Komega_meas[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+  119 |     void correct(double v_meas, [01;35m[Kdouble omega_meas[m[K) {
+      |                                 [01;35m[K~~~~~~~^~~~~~~~~~[m[K
+[100%] [32m[1mLinking CXX executable pf_node[0m
+[100%] Built target pf_node
+-- Install configuration: ""
+-- Installing: /home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/pf_node
+-- Set non-toolchain portion of runtime path of "/home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/pf_node" to ""
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//launch
+-- Installing: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//launch/start.launch.py
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//config
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//config/filter_params.yaml
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/ament_index/resource_index/package_run_dependencies/particle_filter_node
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/ament_index/resource_index/parent_prefix_path/particle_filter_node
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/ament_prefix_path.sh
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/path.sh
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/path.dsv
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.bash
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.sh
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.zsh
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.dsv
+-- Installing: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.dsv
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/ament_index/resource_index/packages/particle_filter_node
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/cmake/particle_filter_nodeConfig.cmake
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/cmake/particle_filter_nodeConfig-version.cmake
+-- Installing: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.xml

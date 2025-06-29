@@ -1,0 +1,110 @@
+[0.000000] (-) TimerEvent: {}
+[0.000838] (particle_filter_node) JobQueued: {'identifier': 'particle_filter_node', 'dependencies': OrderedDict()}
+[0.000914] (particle_filter_node) JobStarted: {'identifier': 'particle_filter_node'}
+[0.009699] (particle_filter_node) JobProgress: {'identifier': 'particle_filter_node', 'progress': 'cmake'}
+[0.010244] (particle_filter_node) JobProgress: {'identifier': 'particle_filter_node', 'progress': 'build'}
+[0.010746] (particle_filter_node) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/apo/ProLab/build/particle_filter_node', '--', '-j12', '-l12'], 'cwd': '/home/apo/ProLab/build/particle_filter_node', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'apo', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/apo', 'OLDPWD': '/home/apo/ProLab', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1645', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/apo/ProLab/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'apo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'apo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/apo-Legion-5-15ACH6H:@/tmp/.ICE-unix/1595,unix/apo-Legion-5-15ACH6H:/tmp/.ICE-unix/1595', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/489b9837_d616_4af3_840a_0b01c17e210e', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.A2JY82', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.197', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/apo/ProLab/install/particle_filter_node:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/apo/ProLab/build/particle_filter_node', 'TURTLEBOT3_MODEL': 'burger', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/apo/ProLab/install/particle_filter_node:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.072750] (particle_filter_node) StdoutLine: {'line': b'[ 50%] Built target pf_node\n'}
+[0.083832] (particle_filter_node) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf.cpp.o\x1b[0m\n'}
+[0.099745] (-) TimerEvent: {}
+[0.200001] (-) TimerEvent: {}
+[0.300298] (-) TimerEvent: {}
+[0.400596] (-) TimerEvent: {}
+[0.500912] (-) TimerEvent: {}
+[0.601198] (-) TimerEvent: {}
+[0.701496] (-) TimerEvent: {}
+[0.801862] (-) TimerEvent: {}
+[0.902143] (-) TimerEvent: {}
+[1.002428] (-) TimerEvent: {}
+[1.102670] (-) TimerEvent: {}
+[1.202972] (-) TimerEvent: {}
+[1.303233] (-) TimerEvent: {}
+[1.403490] (-) TimerEvent: {}
+[1.503764] (-) TimerEvent: {}
+[1.604030] (-) TimerEvent: {}
+[1.704302] (-) TimerEvent: {}
+[1.804573] (-) TimerEvent: {}
+[1.904867] (-) TimerEvent: {}
+[2.005137] (-) TimerEvent: {}
+[2.105420] (-) TimerEvent: {}
+[2.205663] (-) TimerEvent: {}
+[2.305949] (-) TimerEvent: {}
+[2.406224] (-) TimerEvent: {}
+[2.506508] (-) TimerEvent: {}
+[2.606811] (-) TimerEvent: {}
+[2.707100] (-) TimerEvent: {}
+[2.807371] (-) TimerEvent: {}
+[2.907654] (-) TimerEvent: {}
+[2.978782] (particle_filter_node) StderrLine: {'line': b'\x1b[01m\x1b[K/home/apo/ProLab/src/kf.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[01;32m\x1b[K main\x1b[m\x1b[K(int, char**)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[2.979335] (particle_filter_node) StderrLine: {'line': b'\x1b[01m\x1b[K/home/apo/ProLab/src/kf.cpp:150:35:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KKalmanFilter\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[KKalmanFilterNode\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[2.979457] (particle_filter_node) StderrLine: {'line': b'  150 |     rclcpp::spin(std::make_shared<\x1b[01;31m\x1b[KKalmanFilter\x1b[m\x1b[K>());\n'}
+[2.979583] (particle_filter_node) StderrLine: {'line': b'      |                                   \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.979695] (particle_filter_node) StderrLine: {'line': b'      |                                   \x1b[32m\x1b[KKalmanFilterNode\x1b[m\x1b[K\n'}
+[2.979774] (particle_filter_node) StderrLine: {'line': b'\x1b[01m\x1b[K/home/apo/ProLab/src/kf.cpp:150:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Kmake_shared<<expression error> >()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.979853] (particle_filter_node) StderrLine: {'line': b'  150 |     rclcpp::spin(\x1b[01;31m\x1b[Kstd::make_shared<KalmanFilter>()\x1b[m\x1b[K);\n'}
+[2.979929] (particle_filter_node) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[2.980001] (particle_filter_node) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/c++/13/memory:80\x1b[m\x1b[K,\n'}
+[2.980073] (particle_filter_node) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:169\x1b[m\x1b[K,\n'}
+[2.980146] (particle_filter_node) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/apo/ProLab/src/kf.cpp:5\x1b[m\x1b[K:\n'}
+[2.980218] (particle_filter_node) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/shared_ptr.h:1005:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Ktemplate<class _Tp, class ... _Args> std::shared_ptr<typename std::enable_if<(! std::is_array< <template-parameter-1-1> >::value), _Tp>::type> std::\x1b[01;32m\x1b[Kmake_shared\x1b[m\x1b[K(_Args&& ...)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[2.980296] (particle_filter_node) StderrLine: {'line': b' 1005 |     \x1b[01;36m\x1b[Kmake_shared\x1b[m\x1b[K(_Args&&... __args)\n'}
+[2.980368] (particle_filter_node) StderrLine: {'line': b'      |     \x1b[01;36m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[2.980441] (particle_filter_node) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/13/bits/shared_ptr.h:1005:5:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  template argument deduction/substitution failed:\n'}
+[2.980513] (particle_filter_node) StderrLine: {'line': b'\x1b[01m\x1b[K/home/apo/ProLab/src/kf.cpp:150:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[2.980588] (particle_filter_node) StderrLine: {'line': b'  150 |     rclcpp::spin(\x1b[01;31m\x1b[Kstd::make_shared<KalmanFilter>()\x1b[m\x1b[K);\n'}
+[2.980762] (particle_filter_node) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~\x1b[m\x1b[K\n'}
+[3.007767] (-) TimerEvent: {}
+[3.108036] (-) TimerEvent: {}
+[3.208311] (-) TimerEvent: {}
+[3.308590] (-) TimerEvent: {}
+[3.408869] (-) TimerEvent: {}
+[3.509145] (-) TimerEvent: {}
+[3.609423] (-) TimerEvent: {}
+[3.709673] (-) TimerEvent: {}
+[3.809952] (-) TimerEvent: {}
+[3.910237] (-) TimerEvent: {}
+[4.010505] (-) TimerEvent: {}
+[4.110808] (-) TimerEvent: {}
+[4.211093] (-) TimerEvent: {}
+[4.311385] (-) TimerEvent: {}
+[4.411707] (-) TimerEvent: {}
+[4.512043] (-) TimerEvent: {}
+[4.612321] (-) TimerEvent: {}
+[4.712580] (-) TimerEvent: {}
+[4.812893] (-) TimerEvent: {}
+[4.913190] (-) TimerEvent: {}
+[5.013494] (-) TimerEvent: {}
+[5.113811] (-) TimerEvent: {}
+[5.214114] (-) TimerEvent: {}
+[5.314416] (-) TimerEvent: {}
+[5.414928] (-) TimerEvent: {}
+[5.515231] (-) TimerEvent: {}
+[5.615529] (-) TimerEvent: {}
+[5.715844] (-) TimerEvent: {}
+[5.816167] (-) TimerEvent: {}
+[5.916666] (-) TimerEvent: {}
+[6.017028] (-) TimerEvent: {}
+[6.117323] (-) TimerEvent: {}
+[6.217681] (-) TimerEvent: {}
+[6.317977] (-) TimerEvent: {}
+[6.418270] (-) TimerEvent: {}
+[6.518558] (-) TimerEvent: {}
+[6.618860] (-) TimerEvent: {}
+[6.719150] (-) TimerEvent: {}
+[6.819435] (-) TimerEvent: {}
+[6.919721] (-) TimerEvent: {}
+[7.020017] (-) TimerEvent: {}
+[7.120315] (-) TimerEvent: {}
+[7.220620] (-) TimerEvent: {}
+[7.320919] (-) TimerEvent: {}
+[7.421211] (-) TimerEvent: {}
+[7.521506] (-) TimerEvent: {}
+[7.621818] (-) TimerEvent: {}
+[7.722118] (-) TimerEvent: {}
+[7.822443] (-) TimerEvent: {}
+[7.893078] (particle_filter_node) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/kf_node.dir/build.make:76: CMakeFiles/kf_node.dir/src/kf.cpp.o] Error 1\n'}
+[7.893385] (particle_filter_node) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/kf_node.dir/all] Error 2\n'}
+[7.893682] (particle_filter_node) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[7.896212] (particle_filter_node) CommandEnded: {'returncode': 2}
+[7.906713] (particle_filter_node) JobEnded: {'identifier': 'particle_filter_node', 'rc': 2}
+[7.917173] (-) EventReactorShutdown: {}

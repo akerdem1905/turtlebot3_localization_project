@@ -211,17 +211,41 @@ pf_node/fast:
 .PHONY : pf_node/fast
 
 #=============================================================================
-# Target rules for targets named waypoint_navigator_node
+# Target rules for targets named kf_node
 
 # Build rule for target.
-waypoint_navigator_node: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 waypoint_navigator_node
-.PHONY : waypoint_navigator_node
+kf_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kf_node
+.PHONY : kf_node
 
 # fast build rule for target.
-waypoint_navigator_node/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator_node.dir/build.make CMakeFiles/waypoint_navigator_node.dir/build
-.PHONY : waypoint_navigator_node/fast
+kf_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/build
+.PHONY : kf_node/fast
+
+src/kf.o: src/kf.cpp.o
+.PHONY : src/kf.o
+
+# target to build an object file
+src/kf.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/src/kf.cpp.o
+.PHONY : src/kf.cpp.o
+
+src/kf.i: src/kf.cpp.i
+.PHONY : src/kf.i
+
+# target to preprocess a source file
+src/kf.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/src/kf.cpp.i
+.PHONY : src/kf.cpp.i
+
+src/kf.s: src/kf.cpp.s
+.PHONY : src/kf.s
+
+# target to generate assembly for a file
+src/kf.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/src/kf.cpp.s
+.PHONY : src/kf.cpp.s
 
 src/pf.o: src/pf.cpp.o
 .PHONY : src/pf.o
@@ -247,30 +271,6 @@ src/pf.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pf_node.dir/build.make CMakeFiles/pf_node.dir/src/pf.cpp.s
 .PHONY : src/pf.cpp.s
 
-src/waypoint_navigator.o: src/waypoint_navigator.cpp.o
-.PHONY : src/waypoint_navigator.o
-
-# target to build an object file
-src/waypoint_navigator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator_node.dir/build.make CMakeFiles/waypoint_navigator_node.dir/src/waypoint_navigator.cpp.o
-.PHONY : src/waypoint_navigator.cpp.o
-
-src/waypoint_navigator.i: src/waypoint_navigator.cpp.i
-.PHONY : src/waypoint_navigator.i
-
-# target to preprocess a source file
-src/waypoint_navigator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator_node.dir/build.make CMakeFiles/waypoint_navigator_node.dir/src/waypoint_navigator.cpp.i
-.PHONY : src/waypoint_navigator.cpp.i
-
-src/waypoint_navigator.s: src/waypoint_navigator.cpp.s
-.PHONY : src/waypoint_navigator.s
-
-# target to generate assembly for a file
-src/waypoint_navigator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator_node.dir/build.make CMakeFiles/waypoint_navigator_node.dir/src/waypoint_navigator.cpp.s
-.PHONY : src/waypoint_navigator.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -286,14 +286,14 @@ help:
 	@echo "... test"
 	@echo "... particle_filter_node_uninstall"
 	@echo "... uninstall"
+	@echo "... kf_node"
 	@echo "... pf_node"
-	@echo "... waypoint_navigator_node"
+	@echo "... src/kf.o"
+	@echo "... src/kf.i"
+	@echo "... src/kf.s"
 	@echo "... src/pf.o"
 	@echo "... src/pf.i"
 	@echo "... src/pf.s"
-	@echo "... src/waypoint_navigator.o"
-	@echo "... src/waypoint_navigator.i"
-	@echo "... src/waypoint_navigator.s"
 .PHONY : help
 
 

@@ -12,7 +12,9 @@ find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(message_filters REQUIRED)
-find_package(nav2_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 include_directories(include)
 
@@ -26,17 +28,19 @@ ament_target_dependencies(pf_node
   message_filters
 )
 
-add_executable(waypoint_navigator_node src/waypoint_navigator.cpp)
-ament_target_dependencies(waypoint_navigator_node
+add_executable(kf_node src/kf.cpp)
+target_link_libraries(kf_node Eigen3::Eigen)
+ament_target_dependencies(kf_node
   rclcpp
-  rclcpp_action
   geometry_msgs
-  nav2_msgs
+  nav_msgs
+  sensor_msgs
+  message_filters
 )
 
 install(TARGETS
   pf_node
-  waypoint_navigator_node
+  kf_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
