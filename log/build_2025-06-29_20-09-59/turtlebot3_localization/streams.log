@@ -1,0 +1,46 @@
+[0.019s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12
+[0.125s] [ 50%] Built target main_filter_node
+[0.147s] [ 66%] [32mBuilding CXX object CMakeFiles/ekf_node.dir/src/ekf_node.cpp.o[0m
+[0.148s] [ 83%] [32mBuilding CXX object CMakeFiles/ekf_node.dir/src/extended_kalman_filter.cpp.o[0m
+[19.262s] [100%] [32m[1mLinking CXX executable ekf_node[0m
+[20.125s] [100%] Built target ekf_node
+[20.143s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12
+[20.159s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/apo/turtlebot3_localization_project/build/turtlebot3_localization
+[20.172s] -- Install configuration: ""
+[20.172s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/lib/turtlebot3_localization/ekf_node
+[20.191s] -- Set non-toolchain portion of runtime path of "/home/apo/turtlebot3_localization_project/install/turtlebot3_localization/lib/turtlebot3_localization/ekf_node" to ""
+[20.191s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/lib/turtlebot3_localization/main_filter_node
+[20.211s] -- Set non-toolchain portion of runtime path of "/home/apo/turtlebot3_localization_project/install/turtlebot3_localization/lib/turtlebot3_localization/main_filter_node" to ""
+[20.211s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch
+[20.211s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/waypoints.launch.py
+[20.212s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/start_sim_with_nav2.launch.py
+[20.212s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/kalman_filter_test.launch.py
+[20.212s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/ekf.launch.py
+[20.212s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/start_sim.launch.py
+[20.212s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//config
+[20.213s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//config/filter_params.yaml
+[20.213s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//maps
+[20.213s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//maps/map.yaml
+[20.213s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//rviz
+[20.213s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//rviz/rviz_config.rviz
+[20.213s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/include/
+[20.213s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/include//turtlebot3_localization
+[20.214s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/include//turtlebot3_localization/particle_filter.hpp
+[20.214s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/include//turtlebot3_localization/kalman_filter.hpp
+[20.214s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/include//turtlebot3_localization/extended_kalman_filter.hpp
+[20.214s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/package_run_dependencies/turtlebot3_localization
+[20.214s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/parent_prefix_path/turtlebot3_localization
+[20.214s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/ament_prefix_path.sh
+[20.215s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/ament_prefix_path.dsv
+[20.215s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/path.sh
+[20.215s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/path.dsv
+[20.216s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.bash
+[20.216s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.sh
+[20.216s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.zsh
+[20.217s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.dsv
+[20.217s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/package.dsv
+[20.217s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/packages/turtlebot3_localization
+[20.217s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/cmake/turtlebot3_localizationConfig.cmake
+[20.217s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/cmake/turtlebot3_localizationConfig-version.cmake
+[20.218s] -- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/package.xml
+[20.218s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/apo/turtlebot3_localization_project/build/turtlebot3_localization

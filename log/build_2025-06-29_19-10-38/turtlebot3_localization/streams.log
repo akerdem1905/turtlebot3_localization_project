@@ -1,0 +1,10 @@
+[0.022s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12
+[0.131s] [ 33%] [32mBuilding CXX object CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o[0m
+[3.628s] [01m[K/home/apo/turtlebot3_localization_project/src/kalman_filter.cpp:[m[K In member function ‘[01m[Kgeometry_msgs::msg::PoseWithCovarianceStamped KalmanFilter::[01;32m[KgetPrediction[m[K()[m[K’:
+[3.628s] [01m[K/home/apo/turtlebot3_localization_project/src/kalman_filter.cpp:54:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing geometry_msgs::msg::PoseWithCovariance_<std::allocator<void> >::_covariance_type = struct std::array<double, 36>[m[K’ {aka ‘[01m[Kstruct std::array<double, 36>[m[K’} has no member named ‘[01m[Kassign[m[K’
+[3.629s]    54 |     msg.pose.covariance.[01;31m[Kassign[m[K(0.0);
+[3.629s]       |                         [01;31m[K^~~~~~[m[K
+[6.815s] gmake[2]: *** [CMakeFiles/main_filter_node.dir/build.make:90: CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o] Error 1
+[6.816s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/main_filter_node.dir/all] Error 2
+[6.816s] gmake: *** [Makefile:146: all] Error 2
+[6.820s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12

@@ -1,0 +1,55 @@
+[0.023s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12
+[0.072s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.393s] -- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.437s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.452s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.469s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.489s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.585s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.587s] -- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.696s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.820s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.917s] -- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+[0.963s] -- Found message_filters: 4.11.6 (/opt/ros/jazzy/share/message_filters/cmake)
+[0.970s] -- Found tf2: 0.36.11 (/opt/ros/jazzy/share/tf2/cmake)
+[0.975s] -- Found tf2_geometry_msgs: 0.36.11 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[0.981s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[0.982s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.297s] -- Configuring done (1.2s)
+[1.343s] -- Generating done (0.0s)
+[1.358s] -- Build files have been written to: /home/apo/turtlebot3_localization_project/build/turtlebot3_localization
+[1.454s] [ 16%] [32mBuilding CXX object CMakeFiles/ekf_node.dir/src/ekf_node.cpp.o[0m
+[1.454s] [ 33%] [32mBuilding CXX object CMakeFiles/ekf_node.dir/src/extended_kalman_filter.cpp.o[0m
+[1.454s] [ 83%] Built target main_filter_node
+[5.919s] In file included from [01m[K/home/apo/turtlebot3_localization_project/src/extended_kalman_filter.cpp:1[m[K:
+[5.919s] [01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/extended_kalman_filter.hpp:13:22:[m[K [01;31m[Kerror: [m[K‘[01m[Ksensor_msgs[m[K’ does not name a type
+[5.919s]    13 |   void correct(const [01;31m[Ksensor_msgs[m[K::msg::Imu::ConstSharedPtr& imu_msg,
+[5.919s]       |                      [01;31m[K^~~~~~~~~~~[m[K
+[5.919s] [01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/extended_kalman_filter.hpp:13:38:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+[5.919s]    13 |   void correct(const sensor_msgs::msg[01;31m[K::[m[KImu::ConstSharedPtr& imu_msg,
+[5.920s]       |                                      [01;31m[K^~[m[K
+[5.920s] [01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/extended_kalman_filter.hpp:13:38:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+[5.920s]    13 |   void correct[34m[K([m[Kconst sensor_msgs::msg[01;31m[K:[m[K[32m[K:[m[KImu::ConstSharedPtr& imu_msg,
+[5.920s]       |               [34m[K~[m[K                      [01;31m[K^[m[K[32m[K~[m[K
+[5.920s]       |                                      [32m[K)[m[K
+[5.921s] [01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/extended_kalman_filter.hpp:13:35:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[5.921s]    13 |   void correct(const sensor_msgs::[01;31m[Kmsg[m[K::Imu::ConstSharedPtr& imu_msg,
+[5.921s]       |                                   [01;31m[K^~~[m[K
+[5.921s]       |                                      [32m[K;[m[K
+[5.924s] [01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/extended_kalman_filter.hpp:13:40:[m[K [01;31m[Kerror: [m[K‘[01m[KImu[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+[5.924s]    13 |   void correct(const sensor_msgs::msg::[01;31m[KImu[m[K::ConstSharedPtr& imu_msg,
+[5.924s]       |                                        [01;31m[K^~~[m[K
+[6.252s] [01m[K/home/apo/turtlebot3_localization_project/src/extended_kalman_filter.cpp:31:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid ExtendedKalmanFilter::[01;32m[Kcorrect[m[K(const sensor_msgs::msg::Imu_<std::allocator<void> >::ConstSharedPtr&, const sensor_msgs::msg::JointState_<std::allocator<void> >::ConstSharedPtr&)[m[K’
+[6.252s]    31 | void [01;31m[KExtendedKalmanFilter[m[K::correct(
+[6.253s]       |      [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[6.253s] [01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/extended_kalman_filter.hpp:13:8:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kvoid ExtendedKalmanFilter::[01;32m[Kcorrect[m[K(...)[m[K’
+[6.253s]    13 |   void [01;36m[Kcorrect[m[K(const sensor_msgs::msg::Imu::ConstSharedPtr& imu_msg,
+[6.253s]       |        [01;36m[K^~~~~~~[m[K
+[6.253s] [01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/extended_kalman_filter.hpp:8:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass ExtendedKalmanFilter[m[K’ defined here
+[6.253s]     8 | class [01;36m[KExtendedKalmanFilter[m[K {
+[6.254s]       |       [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[8.800s] gmake[2]: *** [CMakeFiles/ekf_node.dir/build.make:90: CMakeFiles/ekf_node.dir/src/extended_kalman_filter.cpp.o] Error 1
+[8.801s] gmake[2]: *** Waiting for unfinished jobs....
+[20.230s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/ekf_node.dir/all] Error 2
+[20.230s] gmake: *** [Makefile:146: all] Error 2
+[20.234s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12

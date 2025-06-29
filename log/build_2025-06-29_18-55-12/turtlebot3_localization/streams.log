@@ -1,0 +1,32 @@
+[0.022s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12
+[0.078s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.385s] -- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.427s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.441s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.459s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.480s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.581s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.583s] -- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.683s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.782s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.876s] -- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+[0.916s] -- Found message_filters: 4.11.6 (/opt/ros/jazzy/share/message_filters/cmake)
+[1.055s] -- Configuring done (1.0s)
+[1.096s] -- Generating done (0.0s)
+[1.110s] -- Build files have been written to: /home/apo/turtlebot3_localization_project/build/turtlebot3_localization
+[1.195s] [ 33%] [32mBuilding CXX object CMakeFiles/main_filter_node.dir/src/main_filter_node.cpp.o[0m
+[1.196s] [ 66%] [32mBuilding CXX object CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o[0m
+[1.210s] [01m[K/home/apo/turtlebot3_localization_project/src/kalman_filter.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kkalman_filter.hpp: No such file or directory
+[1.210s]     1 | #include [01;31m[K"kalman_filter.hpp"[m[K
+[1.210s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.210s] compilation terminated.
+[1.214s] gmake[2]: *** [CMakeFiles/main_filter_node.dir/build.make:90: CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o] Error 1
+[1.214s] gmake[2]: *** Waiting for unfinished jobs....
+[1.735s] [01m[K/home/apo/turtlebot3_localization_project/src/main_filter_node.cpp:15:10:[m[K [01;31m[Kfatal error: [m[Kkalman_filter.hpp: No such file or directory
+[1.736s]    15 | #include [01;31m[K"kalman_filter.hpp"[m[K
+[1.736s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.736s] compilation terminated.
+[1.745s] gmake[2]: *** [CMakeFiles/main_filter_node.dir/build.make:76: CMakeFiles/main_filter_node.dir/src/main_filter_node.cpp.o] Error 1
+[1.746s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/main_filter_node.dir/all] Error 2
+[1.746s] gmake: *** [Makefile:146: all] Error 2
+[1.750s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12

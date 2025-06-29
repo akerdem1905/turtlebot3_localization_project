@@ -1,0 +1,21 @@
+[ 50%] Built target main_filter_node
+[ 83%] [32mBuilding CXX object CMakeFiles/ekf_node.dir/src/extended_kalman_filter.cpp.o[0m
+[ 83%] [32mBuilding CXX object CMakeFiles/ekf_node.dir/src/ekf_node.cpp.o[0m
+[01m[K/home/apo/turtlebot3_localization_project/src/extended_kalman_filter.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Ktf2/LinearMath/Quaternion.h: No such file or directory
+    2 | #include [01;31m[K<tf2/LinearMath/Quaternion.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/ekf_node.dir/build.make:90: CMakeFiles/ekf_node.dir/src/extended_kalman_filter.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+[01m[K/home/apo/turtlebot3_localization_project/src/ekf_node.cpp:[m[K In member function ‘[01m[Kvoid EKFNode::[01;32m[KsensorCallback[m[K(sensor_msgs::msg::Imu_<std::allocator<void> >::ConstSharedPtr, sensor_msgs::msg::JointState_<std::allocator<void> >::ConstSharedPtr)[m[K’:
+[01m[K/home/apo/turtlebot3_localization_project/src/ekf_node.cpp:62:22:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KExtendedKalmanFilter::predict(double&)[m[K’
+   62 |         [01;31m[Kekf_->predict(dt)[m[K;
+      |         [01;31m[K~~~~~~~~~~~~~^~~~[m[K
+In file included from [01m[K/home/apo/turtlebot3_localization_project/src/ekf_node.cpp:9[m[K:
+[01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/extended_kalman_filter.hpp:12:8:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kvoid ExtendedKalmanFilter::[01;32m[Kpredict[m[K(const rclcpp::Time&, double)[m[K’
+   12 |   void [01;36m[Kpredict[m[K(const rclcpp::Time& now, double dt);
+      |        [01;36m[K^~~~~~~[m[K
+[01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/extended_kalman_filter.hpp:12:8:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 1 provided
+gmake[2]: *** [CMakeFiles/ekf_node.dir/build.make:76: CMakeFiles/ekf_node.dir/src/ekf_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/ekf_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

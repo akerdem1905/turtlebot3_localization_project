@@ -1,0 +1,8 @@
+[ 33%] [32mBuilding CXX object CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o[0m
+[01m[K/home/apo/turtlebot3_localization_project/src/kalman_filter.cpp:[m[K In member function ‘[01m[Kgeometry_msgs::msg::PoseWithCovarianceStamped KalmanFilter::[01;32m[KgetPrediction[m[K()[m[K’:
+[01m[K/home/apo/turtlebot3_localization_project/src/kalman_filter.cpp:54:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing geometry_msgs::msg::PoseWithCovariance_<std::allocator<void> >::_covariance_type = struct std::array<double, 36>[m[K’ {aka ‘[01m[Kstruct std::array<double, 36>[m[K’} has no member named ‘[01m[Kassign[m[K’
+   54 |     msg.pose.covariance.[01;31m[Kassign[m[K(0.0);
+      |                         [01;31m[K^~~~~~[m[K
+gmake[2]: *** [CMakeFiles/main_filter_node.dir/build.make:90: CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/main_filter_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

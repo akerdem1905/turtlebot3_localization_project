@@ -1,0 +1,155 @@
+[0.000000] (-) TimerEvent: {}
+[0.000903] (turtlebot3_localization) JobQueued: {'identifier': 'turtlebot3_localization', 'dependencies': OrderedDict()}
+[0.001059] (turtlebot3_localization) JobStarted: {'identifier': 'turtlebot3_localization'}
+[0.016429] (turtlebot3_localization) JobProgress: {'identifier': 'turtlebot3_localization', 'progress': 'cmake'}
+[0.017301] (turtlebot3_localization) JobProgress: {'identifier': 'turtlebot3_localization', 'progress': 'build'}
+[0.018493] (turtlebot3_localization) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization', '--', '-j12', '-l12'], 'cwd': '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'apo', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/apo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1597', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/apo/turtlebot3_localization_project/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'apo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'apo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/apo-Legion-5-15ACH6H:@/tmp/.ICE-unix/1539,unix/apo-Legion-5-15ACH6H:/tmp/.ICE-unix/1539', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/c5b1918b_8618_4ef8_93ed_2ed29a341e8b', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.ZAAG92', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.348', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/apo/turtlebot3_localization_project/install/turtlebot3_localization:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization', 'TURTLEBOT3_MODEL': 'burger', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/apo/turtlebot3_localization_project/install/turtlebot3_localization:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099606] (-) TimerEvent: {}
+[0.133199] (turtlebot3_localization) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o\x1b[0m\n'}
+[0.199737] (-) TimerEvent: {}
+[0.300074] (-) TimerEvent: {}
+[0.400424] (-) TimerEvent: {}
+[0.500762] (-) TimerEvent: {}
+[0.601085] (-) TimerEvent: {}
+[0.701406] (-) TimerEvent: {}
+[0.801704] (-) TimerEvent: {}
+[0.902037] (-) TimerEvent: {}
+[1.002375] (-) TimerEvent: {}
+[1.102804] (-) TimerEvent: {}
+[1.203130] (-) TimerEvent: {}
+[1.303503] (-) TimerEvent: {}
+[1.403810] (-) TimerEvent: {}
+[1.504117] (-) TimerEvent: {}
+[1.604511] (-) TimerEvent: {}
+[1.704869] (-) TimerEvent: {}
+[1.805165] (-) TimerEvent: {}
+[1.905433] (-) TimerEvent: {}
+[2.005806] (-) TimerEvent: {}
+[2.106098] (-) TimerEvent: {}
+[2.206409] (-) TimerEvent: {}
+[2.306761] (-) TimerEvent: {}
+[2.407131] (-) TimerEvent: {}
+[2.507500] (-) TimerEvent: {}
+[2.607821] (-) TimerEvent: {}
+[2.708152] (-) TimerEvent: {}
+[2.808458] (-) TimerEvent: {}
+[2.908815] (-) TimerEvent: {}
+[3.009200] (-) TimerEvent: {}
+[3.109560] (-) TimerEvent: {}
+[3.209908] (-) TimerEvent: {}
+[3.310288] (-) TimerEvent: {}
+[3.410703] (-) TimerEvent: {}
+[3.511018] (-) TimerEvent: {}
+[3.611370] (-) TimerEvent: {}
+[3.711669] (-) TimerEvent: {}
+[3.812013] (-) TimerEvent: {}
+[3.912380] (-) TimerEvent: {}
+[4.012724] (-) TimerEvent: {}
+[4.113028] (-) TimerEvent: {}
+[4.213386] (-) TimerEvent: {}
+[4.313712] (-) TimerEvent: {}
+[4.414072] (-) TimerEvent: {}
+[4.514422] (-) TimerEvent: {}
+[4.614811] (-) TimerEvent: {}
+[4.715135] (-) TimerEvent: {}
+[4.815447] (-) TimerEvent: {}
+[4.915744] (-) TimerEvent: {}
+[5.016034] (-) TimerEvent: {}
+[5.116327] (-) TimerEvent: {}
+[5.216679] (-) TimerEvent: {}
+[5.316974] (-) TimerEvent: {}
+[5.417267] (-) TimerEvent: {}
+[5.517637] (-) TimerEvent: {}
+[5.617951] (-) TimerEvent: {}
+[5.718269] (-) TimerEvent: {}
+[5.818578] (-) TimerEvent: {}
+[5.918899] (-) TimerEvent: {}
+[6.019223] (-) TimerEvent: {}
+[6.119591] (-) TimerEvent: {}
+[6.219964] (-) TimerEvent: {}
+[6.320344] (-) TimerEvent: {}
+[6.420743] (-) TimerEvent: {}
+[6.521114] (-) TimerEvent: {}
+[6.621423] (-) TimerEvent: {}
+[6.721744] (-) TimerEvent: {}
+[6.822064] (-) TimerEvent: {}
+[6.922430] (-) TimerEvent: {}
+[7.022761] (-) TimerEvent: {}
+[7.123055] (-) TimerEvent: {}
+[7.223443] (-) TimerEvent: {}
+[7.323763] (-) TimerEvent: {}
+[7.424115] (-) TimerEvent: {}
+[7.524440] (-) TimerEvent: {}
+[7.624745] (-) TimerEvent: {}
+[7.725037] (-) TimerEvent: {}
+[7.825366] (-) TimerEvent: {}
+[7.925749] (-) TimerEvent: {}
+[8.026061] (-) TimerEvent: {}
+[8.126401] (-) TimerEvent: {}
+[8.226714] (-) TimerEvent: {}
+[8.327078] (-) TimerEvent: {}
+[8.427550] (-) TimerEvent: {}
+[8.527869] (-) TimerEvent: {}
+[8.628205] (-) TimerEvent: {}
+[8.728529] (-) TimerEvent: {}
+[8.828815] (-) TimerEvent: {}
+[8.929102] (-) TimerEvent: {}
+[9.029418] (-) TimerEvent: {}
+[9.129763] (-) TimerEvent: {}
+[9.230046] (-) TimerEvent: {}
+[9.330343] (-) TimerEvent: {}
+[9.430709] (-) TimerEvent: {}
+[9.531025] (-) TimerEvent: {}
+[9.631320] (-) TimerEvent: {}
+[9.718535] (turtlebot3_localization) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable main_filter_node\x1b[0m\n'}
+[9.731427] (-) TimerEvent: {}
+[9.831757] (-) TimerEvent: {}
+[9.932100] (-) TimerEvent: {}
+[10.032441] (-) TimerEvent: {}
+[10.132861] (-) TimerEvent: {}
+[10.233302] (-) TimerEvent: {}
+[10.333694] (-) TimerEvent: {}
+[10.434090] (-) TimerEvent: {}
+[10.534398] (-) TimerEvent: {}
+[10.599693] (turtlebot3_localization) StdoutLine: {'line': b'[100%] Built target main_filter_node\n'}
+[10.616844] (turtlebot3_localization) CommandEnded: {'returncode': 0}
+[10.617652] (turtlebot3_localization) JobProgress: {'identifier': 'turtlebot3_localization', 'progress': 'install'}
+[10.631134] (turtlebot3_localization) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization'], 'cwd': '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'apo', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/apo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1597', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/apo/turtlebot3_localization_project/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'apo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'apo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/apo-Legion-5-15ACH6H:@/tmp/.ICE-unix/1539,unix/apo-Legion-5-15ACH6H:/tmp/.ICE-unix/1539', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/c5b1918b_8618_4ef8_93ed_2ed29a341e8b', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.ZAAG92', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.348', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/apo/turtlebot3_localization_project/install/turtlebot3_localization:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization', 'TURTLEBOT3_MODEL': 'burger', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/apo/turtlebot3_localization_project/install/turtlebot3_localization:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[10.634485] (-) TimerEvent: {}
+[10.645133] (turtlebot3_localization) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.645485] (turtlebot3_localization) StdoutLine: {'line': b'-- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/lib/turtlebot3_localization/main_filter_node\n'}
+[10.666929] (turtlebot3_localization) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/apo/turtlebot3_localization_project/install/turtlebot3_localization/lib/turtlebot3_localization/main_filter_node" to ""\n'}
+[10.667365] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch\n'}
+[10.667549] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/waypoints.launch.py\n'}
+[10.667770] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/start_sim_with_nav2.launch.py\n'}
+[10.667897] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/kalman_filter_test.launch.py\n'}
+[10.668023] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/start_sim.launch.py\n'}
+[10.668186] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//config\n'}
+[10.668593] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//config/filter_params.yaml\n'}
+[10.668777] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//maps\n'}
+[10.668912] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//maps/map.yaml\n'}
+[10.669029] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//rviz\n'}
+[10.669140] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//rviz/rviz_config.rviz\n'}
+[10.669247] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/include/\n'}
+[10.669380] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/include//turtlebot3_localization\n'}
+[10.669576] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/include//turtlebot3_localization/particle_filter.hpp\n'}
+[10.669732] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/include//turtlebot3_localization/ekf.hpp\n'}
+[10.669853] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/include//turtlebot3_localization/kalman_filter.hpp\n'}
+[10.669954] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/package_run_dependencies/turtlebot3_localization\n'}
+[10.670055] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/parent_prefix_path/turtlebot3_localization\n'}
+[10.670164] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/ament_prefix_path.sh\n'}
+[10.670268] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/ament_prefix_path.dsv\n'}
+[10.670402] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/path.sh\n'}
+[10.670521] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/path.dsv\n'}
+[10.670658] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.bash\n'}
+[10.670797] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.sh\n'}
+[10.670917] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.zsh\n'}
+[10.671025] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.dsv\n'}
+[10.671196] (turtlebot3_localization) StdoutLine: {'line': b'-- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/package.dsv\n'}
+[10.671300] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/packages/turtlebot3_localization\n'}
+[10.671441] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/cmake/turtlebot3_localizationConfig.cmake\n'}
+[10.671556] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/cmake/turtlebot3_localizationConfig-version.cmake\n'}
+[10.671702] (turtlebot3_localization) StdoutLine: {'line': b'-- Up-to-date: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/package.xml\n'}
+[10.672421] (turtlebot3_localization) CommandEnded: {'returncode': 0}
+[10.692398] (turtlebot3_localization) JobEnded: {'identifier': 'turtlebot3_localization', 'rc': 0}
+[10.695021] (-) EventReactorShutdown: {}

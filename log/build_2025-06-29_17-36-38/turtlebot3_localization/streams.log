@@ -1,0 +1,73 @@
+[0.012s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/apo/turtlebot3_localization_project -DCMAKE_INSTALL_PREFIX=/home/apo/turtlebot3_localization_project/install/turtlebot3_localization
+[0.149s] -- The C compiler identification is GNU 13.3.0
+[0.213s] -- The CXX compiler identification is GNU 13.3.0
+[0.233s] -- Detecting C compiler ABI info
+[0.341s] -- Detecting C compiler ABI info - done
+[0.350s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.351s] -- Detecting C compile features
+[0.351s] -- Detecting C compile features - done
+[0.363s] -- Detecting CXX compiler ABI info
+[0.486s] -- Detecting CXX compiler ABI info - done
+[0.499s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.499s] -- Detecting CXX compile features
+[0.500s] -- Detecting CXX compile features - done
+[0.507s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.694s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.852s] -- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.919s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.942s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.969s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.999s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.124s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.130s] -- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.248s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.270s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.297s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.406s] -- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[1.454s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.490s] -- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+[1.529s] -- Found message_filters: 4.11.6 (/opt/ros/jazzy/share/message_filters/cmake)
+[1.538s] -- Found tf2: 0.36.11 (/opt/ros/jazzy/share/tf2/cmake)
+[1.546s] -- Found tf2_geometry_msgs: 0.36.11 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[1.572s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[1.573s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.573s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.846s] -- Configuring done (1.8s)
+[1.864s] -- Generating done (0.0s)
+[1.868s] -- Build files have been written to: /home/apo/turtlebot3_localization_project/build/turtlebot3_localization
+[1.881s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/apo/turtlebot3_localization_project -DCMAKE_INSTALL_PREFIX=/home/apo/turtlebot3_localization_project/install/turtlebot3_localization
+[1.883s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12
+[1.951s] [ 66%] [32mBuilding CXX object CMakeFiles/main_filter_node.dir/src/main_filter_node.cpp.o[0m
+[1.951s] [ 66%] [32mBuilding CXX object CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o[0m
+[15.672s] [100%] [32m[1mLinking CXX executable main_filter_node[0m
+[16.312s] [100%] Built target main_filter_node
+[16.327s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12
+[16.341s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/apo/turtlebot3_localization_project/build/turtlebot3_localization
+[16.351s] -- Install configuration: ""
+[16.352s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/lib/turtlebot3_localization/main_filter_node
+[16.365s] -- Set non-toolchain portion of runtime path of "/home/apo/turtlebot3_localization_project/install/turtlebot3_localization/lib/turtlebot3_localization/main_filter_node" to ""
+[16.365s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch
+[16.365s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/waypoints.launch.py
+[16.365s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//launch/start_sim.launch.py
+[16.365s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//config
+[16.366s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//config/filter_params.yaml
+[16.366s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//maps
+[16.366s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//maps/map.yaml
+[16.366s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//rviz
+[16.366s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization//rviz/rviz_config.rviz
+[16.366s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/package_run_dependencies/turtlebot3_localization
+[16.367s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/parent_prefix_path/turtlebot3_localization
+[16.367s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/ament_prefix_path.sh
+[16.367s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/ament_prefix_path.dsv
+[16.367s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/path.sh
+[16.367s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/path.dsv
+[16.368s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.bash
+[16.368s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.sh
+[16.368s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.zsh
+[16.368s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.dsv
+[16.368s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/package.dsv
+[16.369s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/packages/turtlebot3_localization
+[16.369s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/cmake/turtlebot3_localizationConfig.cmake
+[16.369s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/cmake/turtlebot3_localizationConfig-version.cmake
+[16.369s] -- Installing: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/package.xml
+[16.372s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/apo/turtlebot3_localization_project/build/turtlebot3_localization

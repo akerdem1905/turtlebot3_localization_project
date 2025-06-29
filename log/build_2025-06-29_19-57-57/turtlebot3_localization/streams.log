@@ -1,0 +1,14 @@
+[0.028s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12
+[0.137s] [ 33%] [32mBuilding CXX object CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o[0m
+[0.137s] [ 33%] [32mBuilding CXX object CMakeFiles/ekf_node.dir/src/ekf_node.cpp.o[0m
+[0.600s] [01m[K/home/apo/turtlebot3_localization_project/src/ekf_node.cpp:9:10:[m[K [01;31m[Kfatal error: [m[Kextended_kalman_filter.hpp: No such file or directory
+[0.600s]     9 | #include [01;31m[K"extended_kalman_filter.hpp"[m[K
+[0.600s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.601s] compilation terminated.
+[0.609s] gmake[2]: *** [CMakeFiles/ekf_node.dir/build.make:76: CMakeFiles/ekf_node.dir/src/ekf_node.cpp.o] Error 1
+[0.609s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/ekf_node.dir/all] Error 2
+[0.609s] gmake[1]: *** Waiting for unfinished jobs....
+[10.356s] [ 50%] [32m[1mLinking CXX executable main_filter_node[0m
+[11.398s] [ 66%] Built target main_filter_node
+[11.400s] gmake: *** [Makefile:146: all] Error 2
+[11.403s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12
