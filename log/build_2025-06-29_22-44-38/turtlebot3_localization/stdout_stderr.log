@@ -1,0 +1,67 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+-- Found message_filters: 4.11.6 (/opt/ros/jazzy/share/message_filters/cmake)
+-- Found tf2: 0.36.11 (/opt/ros/jazzy/share/tf2/cmake)
+-- Found tf2_ros: 0.36.12 (/opt/ros/jazzy/share/tf2_ros/cmake)
+-- Found tf2_geometry_msgs: 0.36.12 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Configuring done (1.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/apo/turtlebot3_localization_project/build/turtlebot3_localization
+[ 60%] [32mBuilding CXX object CMakeFiles/particle_filter_node.dir/src/particle_filter.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf_node.cpp.o[0m
+[01m[K/home/apo/turtlebot3_localization_project/src/kf_node.cpp:9:7:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kclass KalmanFilterNode[m[K’
+    9 | class [01;31m[KKalmanFilterNode[m[K : public rclcpp::Node {
+      |       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/apo/turtlebot3_localization_project/src/kf_node.cpp:1[m[K:
+[01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/kf.hpp:13:7:[m[K [01;36m[Knote: [m[Kprevious definition of ‘[01m[Kclass KalmanFilterNode[m[K’
+   13 | class [01;36m[KKalmanFilterNode[m[K : public rclcpp::Node {
+      |       [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:[m[K In constructor ‘[01m[KKalmanFilterNode::[01;32m[KKalmanFilterNode[m[K()[m[K’:
+[01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:9:30:[m[K [01;31m[Kerror: [m[K‘[01m[KSync[m[K’ was not declared in this scope; did you mean ‘[01m[Ksync[m[K’?
+    9 |     sync_ = std::make_shared<[01;31m[KSync[m[K>(Sync(10), imu_sub_, joint_sub_);
+      |                              [01;31m[K^~~~[m[K
+      |                              [32m[Ksync[m[K
+[01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:[m[K In member function ‘[01m[Kvoid KalmanFilterNode::[01;32m[Kpublish[m[K()[m[K’:
+[01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:100:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf2[m[K’ has not been declared
+  100 |     [01;31m[Ktf2[m[K::Quaternion q;
+      |     [01;31m[K^~~[m[K
+[01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:101:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kq[m[K’ was not declared in this scope
+  101 |     [01;31m[Kq[m[K.setRPY(0, 0, x_(4));
+      |     [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/kf_node.dir/build.make:90: CMakeFiles/kf_node.dir/src/kf_node.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/kf_node.dir/build.make:76: CMakeFiles/kf_node.dir/src/kf.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/kf_node.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 80%] [32m[1mLinking CXX executable particle_filter_node[0m
+[ 80%] Built target particle_filter_node
+gmake: *** [Makefile:146: all] Error 2

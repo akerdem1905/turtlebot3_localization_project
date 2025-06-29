@@ -1,0 +1,27 @@
+[ 40%] Built target particle_filter_node
+[ 60%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf_node.cpp.o[0m
+[01m[K/home/apo/turtlebot3_localization_project/src/kf_node.cpp:9:7:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kclass KalmanFilterNode[m[K’
+    9 | class [01;31m[KKalmanFilterNode[m[K : public rclcpp::Node {
+      |       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/apo/turtlebot3_localization_project/src/kf_node.cpp:1[m[K:
+[01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/kf.hpp:13:7:[m[K [01;36m[Knote: [m[Kprevious definition of ‘[01m[Kclass KalmanFilterNode[m[K’
+   13 | class [01;36m[KKalmanFilterNode[m[K : public rclcpp::Node {
+      |       [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:[m[K In constructor ‘[01m[KKalmanFilterNode::[01;32m[KKalmanFilterNode[m[K()[m[K’:
+[01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:9:30:[m[K [01;31m[Kerror: [m[K‘[01m[KSync[m[K’ was not declared in this scope; did you mean ‘[01m[Ksync[m[K’?
+    9 |     sync_ = std::make_shared<[01;31m[KSync[m[K>(Sync(10), imu_sub_, joint_sub_);
+      |                              [01;31m[K^~~~[m[K
+      |                              [32m[Ksync[m[K
+[01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:[m[K In member function ‘[01m[Kvoid KalmanFilterNode::[01;32m[Kpublish[m[K()[m[K’:
+[01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:100:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf2[m[K’ has not been declared
+  100 |     [01;31m[Ktf2[m[K::Quaternion q;
+      |     [01;31m[K^~~[m[K
+[01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:101:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kq[m[K’ was not declared in this scope
+  101 |     [01;31m[Kq[m[K.setRPY(0, 0, x_(4));
+      |     [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/kf_node.dir/build.make:90: CMakeFiles/kf_node.dir/src/kf_node.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/kf_node.dir/build.make:76: CMakeFiles/kf_node.dir/src/kf.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/kf_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

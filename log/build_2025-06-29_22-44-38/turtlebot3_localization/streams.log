@@ -1,0 +1,71 @@
+[0.011s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/apo/turtlebot3_localization_project -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/apo/turtlebot3_localization_project/install/turtlebot3_localization
+[0.060s] -- The C compiler identification is GNU 13.3.0
+[0.109s] -- The CXX compiler identification is GNU 13.3.0
+[0.125s] -- Detecting C compiler ABI info
+[0.208s] -- Detecting C compiler ABI info - done
+[0.215s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.215s] -- Detecting C compile features
+[0.216s] -- Detecting C compile features - done
+[0.224s] -- Detecting CXX compiler ABI info
+[0.318s] -- Detecting CXX compiler ABI info - done
+[0.325s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.326s] -- Detecting CXX compile features
+[0.326s] -- Detecting CXX compile features - done
+[0.331s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.473s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.537s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.595s] -- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.652s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.671s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.691s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.714s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.802s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.807s] -- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.901s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.919s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.940s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.026s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.091s] -- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+[1.121s] -- Found message_filters: 4.11.6 (/opt/ros/jazzy/share/message_filters/cmake)
+[1.143s] -- Found tf2: 0.36.11 (/opt/ros/jazzy/share/tf2/cmake)
+[1.154s] -- Found tf2_ros: 0.36.12 (/opt/ros/jazzy/share/tf2_ros/cmake)
+[1.348s] -- Found tf2_geometry_msgs: 0.36.12 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[1.367s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[1.369s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.369s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.454s] -- Configuring done (1.4s)
+[1.474s] -- Generating done (0.0s)
+[1.479s] -- Build files have been written to: /home/apo/turtlebot3_localization_project/build/turtlebot3_localization
+[1.490s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/apo/turtlebot3_localization_project -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/apo/turtlebot3_localization_project/install/turtlebot3_localization
+[1.491s] Invoking command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12
+[1.544s] [ 60%] [32mBuilding CXX object CMakeFiles/particle_filter_node.dir/src/particle_filter.cpp.o[0m
+[1.545s] [ 60%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf.cpp.o[0m
+[1.545s] [ 60%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf_node.cpp.o[0m
+[4.489s] [01m[K/home/apo/turtlebot3_localization_project/src/kf_node.cpp:9:7:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kclass KalmanFilterNode[m[K’
+[4.490s]     9 | class [01;31m[KKalmanFilterNode[m[K : public rclcpp::Node {
+[4.490s]       |       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[4.490s] In file included from [01m[K/home/apo/turtlebot3_localization_project/src/kf_node.cpp:1[m[K:
+[4.490s] [01m[K/home/apo/turtlebot3_localization_project/include/turtlebot3_localization/kf.hpp:13:7:[m[K [01;36m[Knote: [m[Kprevious definition of ‘[01m[Kclass KalmanFilterNode[m[K’
+[4.490s]    13 | class [01;36m[KKalmanFilterNode[m[K : public rclcpp::Node {
+[4.490s]       |       [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[4.509s] [01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:[m[K In constructor ‘[01m[KKalmanFilterNode::[01;32m[KKalmanFilterNode[m[K()[m[K’:
+[4.510s] [01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:9:30:[m[K [01;31m[Kerror: [m[K‘[01m[KSync[m[K’ was not declared in this scope; did you mean ‘[01m[Ksync[m[K’?
+[4.510s]     9 |     sync_ = std::make_shared<[01;31m[KSync[m[K>(Sync(10), imu_sub_, joint_sub_);
+[4.510s]       |                              [01;31m[K^~~~[m[K
+[4.510s]       |                              [32m[Ksync[m[K
+[4.729s] [01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:[m[K In member function ‘[01m[Kvoid KalmanFilterNode::[01;32m[Kpublish[m[K()[m[K’:
+[4.729s] [01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:100:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktf2[m[K’ has not been declared
+[4.729s]   100 |     [01;31m[Ktf2[m[K::Quaternion q;
+[4.729s]       |     [01;31m[K^~~[m[K
+[4.734s] [01m[K/home/apo/turtlebot3_localization_project/src/kf.cpp:101:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kq[m[K’ was not declared in this scope
+[4.735s]   101 |     [01;31m[Kq[m[K.setRPY(0, 0, x_(4));
+[4.735s]       |     [01;31m[K^[m[K
+[6.657s] gmake[2]: *** [CMakeFiles/kf_node.dir/build.make:90: CMakeFiles/kf_node.dir/src/kf_node.cpp.o] Error 1
+[6.657s] gmake[2]: *** Waiting for unfinished jobs....
+[9.994s] gmake[2]: *** [CMakeFiles/kf_node.dir/build.make:76: CMakeFiles/kf_node.dir/src/kf.cpp.o] Error 1
+[9.994s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/kf_node.dir/all] Error 2
+[9.994s] gmake[1]: *** Waiting for unfinished jobs....
+[12.799s] [ 80%] [32m[1mLinking CXX executable particle_filter_node[0m
+[13.345s] [ 80%] Built target particle_filter_node
+[13.346s] gmake: *** [Makefile:146: all] Error 2
+[13.348s] Invoked command in '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/turtlebot3_localization_project/build/turtlebot3_localization -- -j12 -l12

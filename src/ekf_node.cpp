@@ -1,7 +1,6 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/imu.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
-#include "nav_msgs/msg/odometry.hpp"
 #include "geometry_msgs/msg/pose_with_covariance_stamped.hpp"
 #include "message_filters/subscriber.h"
 #include "message_filters/sync_policies/approximate_time.h"
@@ -44,19 +43,22 @@ private:
         const sensor_msgs::msg::Imu::ConstSharedPtr imu_msg,
         const sensor_msgs::msg::JointState::ConstSharedPtr joint_msg)
     {
-        rclcpp::Time now_ros(imu_msg->header.stamp);
+        rclcpp::Time now_ros = imu_msg->header.stamp;
 
         if (last_time_.nanoseconds() == 0) {
             last_time_ = now_ros;
+            RCLCPP_INFO(this->get_logger(), "EKF: First timestamp received.");
             return;
         }
 
         double dt = (now_ros - last_time_).seconds();
-        if (dt <= 0.0 || dt > 1.0) {
+
+        if (dt < 0.0001 || dt > 1.0) {
             RCLCPP_WARN(this->get_logger(), "Ungültiges dt: %.3f", dt);
             last_time_ = now_ros;
             return;
         }
+
         last_time_ = now_ros;
 
         ekf_->predict(now_ros, dt);

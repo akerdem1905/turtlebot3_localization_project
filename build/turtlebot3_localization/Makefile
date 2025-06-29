@@ -198,126 +198,41 @@ turtlebot3_localization_uninstall/fast:
 .PHONY : turtlebot3_localization_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named main_filter_node
+# Target rules for targets named kf_node
 
 # Build rule for target.
-main_filter_node: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main_filter_node
-.PHONY : main_filter_node
+kf_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kf_node
+.PHONY : kf_node
 
 # fast build rule for target.
-main_filter_node/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_filter_node.dir/build.make CMakeFiles/main_filter_node.dir/build
-.PHONY : main_filter_node/fast
+kf_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/build
+.PHONY : kf_node/fast
 
-#=============================================================================
-# Target rules for targets named ekf_node
-
-# Build rule for target.
-ekf_node: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ekf_node
-.PHONY : ekf_node
-
-# fast build rule for target.
-ekf_node/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/build
-.PHONY : ekf_node/fast
-
-src/ekf_node.o: src/ekf_node.cpp.o
-.PHONY : src/ekf_node.o
+src/kf_test.o: src/kf_test.cpp.o
+.PHONY : src/kf_test.o
 
 # target to build an object file
-src/ekf_node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/src/ekf_node.cpp.o
-.PHONY : src/ekf_node.cpp.o
+src/kf_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/src/kf_test.cpp.o
+.PHONY : src/kf_test.cpp.o
 
-src/ekf_node.i: src/ekf_node.cpp.i
-.PHONY : src/ekf_node.i
-
-# target to preprocess a source file
-src/ekf_node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/src/ekf_node.cpp.i
-.PHONY : src/ekf_node.cpp.i
-
-src/ekf_node.s: src/ekf_node.cpp.s
-.PHONY : src/ekf_node.s
-
-# target to generate assembly for a file
-src/ekf_node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/src/ekf_node.cpp.s
-.PHONY : src/ekf_node.cpp.s
-
-src/extended_kalman_filter.o: src/extended_kalman_filter.cpp.o
-.PHONY : src/extended_kalman_filter.o
-
-# target to build an object file
-src/extended_kalman_filter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/src/extended_kalman_filter.cpp.o
-.PHONY : src/extended_kalman_filter.cpp.o
-
-src/extended_kalman_filter.i: src/extended_kalman_filter.cpp.i
-.PHONY : src/extended_kalman_filter.i
+src/kf_test.i: src/kf_test.cpp.i
+.PHONY : src/kf_test.i
 
 # target to preprocess a source file
-src/extended_kalman_filter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/src/extended_kalman_filter.cpp.i
-.PHONY : src/extended_kalman_filter.cpp.i
+src/kf_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/src/kf_test.cpp.i
+.PHONY : src/kf_test.cpp.i
 
-src/extended_kalman_filter.s: src/extended_kalman_filter.cpp.s
-.PHONY : src/extended_kalman_filter.s
-
-# target to generate assembly for a file
-src/extended_kalman_filter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/src/extended_kalman_filter.cpp.s
-.PHONY : src/extended_kalman_filter.cpp.s
-
-src/kalman_filter.o: src/kalman_filter.cpp.o
-.PHONY : src/kalman_filter.o
-
-# target to build an object file
-src/kalman_filter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_filter_node.dir/build.make CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o
-.PHONY : src/kalman_filter.cpp.o
-
-src/kalman_filter.i: src/kalman_filter.cpp.i
-.PHONY : src/kalman_filter.i
-
-# target to preprocess a source file
-src/kalman_filter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_filter_node.dir/build.make CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.i
-.PHONY : src/kalman_filter.cpp.i
-
-src/kalman_filter.s: src/kalman_filter.cpp.s
-.PHONY : src/kalman_filter.s
+src/kf_test.s: src/kf_test.cpp.s
+.PHONY : src/kf_test.s
 
 # target to generate assembly for a file
-src/kalman_filter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_filter_node.dir/build.make CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.s
-.PHONY : src/kalman_filter.cpp.s
-
-src/main_filter_node.o: src/main_filter_node.cpp.o
-.PHONY : src/main_filter_node.o
-
-# target to build an object file
-src/main_filter_node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_filter_node.dir/build.make CMakeFiles/main_filter_node.dir/src/main_filter_node.cpp.o
-.PHONY : src/main_filter_node.cpp.o
-
-src/main_filter_node.i: src/main_filter_node.cpp.i
-.PHONY : src/main_filter_node.i
-
-# target to preprocess a source file
-src/main_filter_node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_filter_node.dir/build.make CMakeFiles/main_filter_node.dir/src/main_filter_node.cpp.i
-.PHONY : src/main_filter_node.cpp.i
-
-src/main_filter_node.s: src/main_filter_node.cpp.s
-.PHONY : src/main_filter_node.s
-
-# target to generate assembly for a file
-src/main_filter_node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main_filter_node.dir/build.make CMakeFiles/main_filter_node.dir/src/main_filter_node.cpp.s
-.PHONY : src/main_filter_node.cpp.s
+src/kf_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/src/kf_test.cpp.s
+.PHONY : src/kf_test.cpp.s
 
 # Help Target
 help:
@@ -334,20 +249,10 @@ help:
 	@echo "... test"
 	@echo "... turtlebot3_localization_uninstall"
 	@echo "... uninstall"
-	@echo "... ekf_node"
-	@echo "... main_filter_node"
-	@echo "... src/ekf_node.o"
-	@echo "... src/ekf_node.i"
-	@echo "... src/ekf_node.s"
-	@echo "... src/extended_kalman_filter.o"
-	@echo "... src/extended_kalman_filter.i"
-	@echo "... src/extended_kalman_filter.s"
-	@echo "... src/kalman_filter.o"
-	@echo "... src/kalman_filter.i"
-	@echo "... src/kalman_filter.s"
-	@echo "... src/main_filter_node.o"
-	@echo "... src/main_filter_node.i"
-	@echo "... src/main_filter_node.s"
+	@echo "... kf_node"
+	@echo "... src/kf_test.o"
+	@echo "... src/kf_test.i"
+	@echo "... src/kf_test.s"
 .PHONY : help
 
 

@@ -1,6 +1,5 @@
-
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
@@ -9,9 +8,10 @@ import os
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
+    autostart = LaunchConfiguration('autostart', default='true')
     map_file = LaunchConfiguration('map', default=os.path.expanduser('~/turtlebot3_localization_project/maps/map.yaml'))
 
-    # TurtleBot3 Gazebo
+    # Gazebo Launch
     gazebo_pkg = FindPackageShare('turtlebot3_gazebo').find('turtlebot3_gazebo')
     gazebo_launch = os.path.join(gazebo_pkg, 'launch', 'turtlebot3_world.launch.py')
 
@@ -20,7 +20,7 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': use_sim_time}.items()
     )
 
-    # Nav2
+    # Navigation2 Launch (inkl. AMCL, map_server, lifecycle manager)
     nav2_pkg = FindPackageShare('turtlebot3_navigation2').find('turtlebot3_navigation2')
     nav2_launch = os.path.join(nav2_pkg, 'launch', 'navigation2.launch.py')
 
@@ -28,17 +28,34 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(nav2_launch),
         launch_arguments={
             'map': map_file,
-            'use_sim_time': use_sim_time
+            'use_sim_time': use_sim_time,
+            'autostart': autostart
         }.items()
     )
 
-    # Kalman-Filter Node
-    kalman_node = Node(
+    # Partikelfilter-Node (auskommentiert für Kalman-Test)
+    # particle_filter_node = Node(
+    #     package='turtlebot3_localization',
+    #     executable='particle_filter_node',
+    #     name='particle_filter_node',
+    #     output='screen',
+    #     parameters=[{'use_sim_time': True}]
+    # )
+
+    # Kalman-Filter Node (aktiv für aktuellen Test)
+    kalman_filter_node = Node(
         package='turtlebot3_localization',
-        executable='main_filter_node',
-        name='kalman_filter_node',
+        executable='kf_node',
+        name='kf_node',
         output='screen',
         parameters=[{'use_sim_time': True}]
     )
 
-    return LaunchDescription([gazebo, nav2, kalman_node])
+    return LaunchDescription([
+        DeclareLaunchArgument('use_sim_time', default_value='true'),
+        DeclareLaunchArgument('autostart', default_value='true'),
+        DeclareLaunchArgument('map', default_value=os.path.expanduser('~/turtlebot3_localization_project/maps/map.yaml')),
+        gazebo,
+        nav2,
+        kalman_filter_node  # <--- Jetzt aktiv
+    ])

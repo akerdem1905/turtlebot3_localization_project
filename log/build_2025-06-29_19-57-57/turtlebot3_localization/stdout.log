@@ -1,4 +1,0 @@
-[ 33%] [32mBuilding CXX object CMakeFiles/main_filter_node.dir/src/kalman_filter.cpp.o[0m
-[ 33%] [32mBuilding CXX object CMakeFiles/ekf_node.dir/src/ekf_node.cpp.o[0m
-[ 50%] [32m[1mLinking CXX executable main_filter_node[0m
-[ 66%] Built target main_filter_node

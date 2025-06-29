@@ -16,7 +16,7 @@ set(_turtlebot3_localization_CONFIG_INCLUDED TRUE)
 
 # output package information
 if(NOT turtlebot3_localization_FIND_QUIETLY)
-  message(STATUS "Found turtlebot3_localization: 0.1.0 (${turtlebot3_localization_DIR})")
+  message(STATUS "Found turtlebot3_localization: 0.0.1 (${turtlebot3_localization_DIR})")
 endif()
 
 # warn when using a deprecated package

@@ -1,0 +1,227 @@
+[0.000000] (-) TimerEvent: {}
+[0.000136] (turtlebot3_localization) JobQueued: {'identifier': 'turtlebot3_localization', 'dependencies': OrderedDict()}
+[0.000173] (turtlebot3_localization) JobStarted: {'identifier': 'turtlebot3_localization'}
+[0.008395] (turtlebot3_localization) JobProgress: {'identifier': 'turtlebot3_localization', 'progress': 'cmake'}
+[0.008794] (turtlebot3_localization) JobProgress: {'identifier': 'turtlebot3_localization', 'progress': 'build'}
+[0.009274] (turtlebot3_localization) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization', '--', '-j12', '-l12'], 'cwd': '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'apo', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/apo', 'OLDPWD': '/home/apo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1645', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'apo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'apo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/apo-Legion-5-15ACH6H:@/tmp/.ICE-unix/1595,unix/apo-Legion-5-15ACH6H:/tmp/.ICE-unix/1595', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/ddf0da7d_06b5_4851_b08b_b67aa0139dcd', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.A2JY82', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.122', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization', 'TURTLEBOT3_MODEL': 'burger', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.036914] (turtlebot3_localization) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.099155] (-) TimerEvent: {}
+[0.199423] (-) TimerEvent: {}
+[0.218258] (turtlebot3_localization) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.224483] (turtlebot3_localization) StdoutLine: {'line': b'-- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.250049] (turtlebot3_localization) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.258055] (turtlebot3_localization) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.268094] (turtlebot3_localization) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.280102] (turtlebot3_localization) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.299530] (-) TimerEvent: {}
+[0.337653] (turtlebot3_localization) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.338663] (turtlebot3_localization) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.398002] (turtlebot3_localization) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.399633] (-) TimerEvent: {}
+[0.457374] (turtlebot3_localization) StdoutLine: {'line': b'-- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)\n'}
+[0.499759] (-) TimerEvent: {}
+[0.510770] (turtlebot3_localization) StdoutLine: {'line': b'-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)\n'}
+[0.537141] (turtlebot3_localization) StdoutLine: {'line': b'-- Found message_filters: 4.11.6 (/opt/ros/jazzy/share/message_filters/cmake)\n'}
+[0.540776] (turtlebot3_localization) StdoutLine: {'line': b'-- Found tf2: 0.36.12 (/opt/ros/jazzy/share/tf2/cmake)\n'}
+[0.544065] (turtlebot3_localization) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.36.12 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)\n'}
+[0.547168] (turtlebot3_localization) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[0.548374] (turtlebot3_localization) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[0.599866] (-) TimerEvent: {}
+[0.700109] (-) TimerEvent: {}
+[0.728870] (turtlebot3_localization) StdoutLine: {'line': b'-- Configuring done (0.7s)\n'}
+[0.748809] (turtlebot3_localization) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.756727] (turtlebot3_localization) StdoutLine: {'line': b'-- Build files have been written to: /home/apo/turtlebot3_localization_project/build/turtlebot3_localization\n'}
+[0.794759] (turtlebot3_localization) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf_test.cpp.o\x1b[0m\n'}
+[0.800200] (-) TimerEvent: {}
+[0.900459] (-) TimerEvent: {}
+[1.000749] (-) TimerEvent: {}
+[1.101038] (-) TimerEvent: {}
+[1.201333] (-) TimerEvent: {}
+[1.301629] (-) TimerEvent: {}
+[1.401929] (-) TimerEvent: {}
+[1.502228] (-) TimerEvent: {}
+[1.602546] (-) TimerEvent: {}
+[1.702840] (-) TimerEvent: {}
+[1.803137] (-) TimerEvent: {}
+[1.903458] (-) TimerEvent: {}
+[2.003758] (-) TimerEvent: {}
+[2.104058] (-) TimerEvent: {}
+[2.204343] (-) TimerEvent: {}
+[2.304628] (-) TimerEvent: {}
+[2.404914] (-) TimerEvent: {}
+[2.505211] (-) TimerEvent: {}
+[2.605531] (-) TimerEvent: {}
+[2.705832] (-) TimerEvent: {}
+[2.806124] (-) TimerEvent: {}
+[2.906427] (-) TimerEvent: {}
+[3.006725] (-) TimerEvent: {}
+[3.107011] (-) TimerEvent: {}
+[3.207314] (-) TimerEvent: {}
+[3.307603] (-) TimerEvent: {}
+[3.407887] (-) TimerEvent: {}
+[3.508177] (-) TimerEvent: {}
+[3.608668] (-) TimerEvent: {}
+[3.708961] (-) TimerEvent: {}
+[3.809256] (-) TimerEvent: {}
+[3.909556] (-) TimerEvent: {}
+[4.009845] (-) TimerEvent: {}
+[4.110137] (-) TimerEvent: {}
+[4.210440] (-) TimerEvent: {}
+[4.310731] (-) TimerEvent: {}
+[4.411023] (-) TimerEvent: {}
+[4.511335] (-) TimerEvent: {}
+[4.611857] (-) TimerEvent: {}
+[4.712154] (-) TimerEvent: {}
+[4.812775] (-) TimerEvent: {}
+[4.913074] (-) TimerEvent: {}
+[5.013363] (-) TimerEvent: {}
+[5.113652] (-) TimerEvent: {}
+[5.213945] (-) TimerEvent: {}
+[5.314247] (-) TimerEvent: {}
+[5.414572] (-) TimerEvent: {}
+[5.514864] (-) TimerEvent: {}
+[5.615157] (-) TimerEvent: {}
+[5.715463] (-) TimerEvent: {}
+[5.815753] (-) TimerEvent: {}
+[5.916046] (-) TimerEvent: {}
+[6.016333] (-) TimerEvent: {}
+[6.116626] (-) TimerEvent: {}
+[6.216914] (-) TimerEvent: {}
+[6.317186] (-) TimerEvent: {}
+[6.417476] (-) TimerEvent: {}
+[6.517794] (-) TimerEvent: {}
+[6.618085] (-) TimerEvent: {}
+[6.718378] (-) TimerEvent: {}
+[6.818665] (-) TimerEvent: {}
+[6.918951] (-) TimerEvent: {}
+[7.019245] (-) TimerEvent: {}
+[7.119547] (-) TimerEvent: {}
+[7.219842] (-) TimerEvent: {}
+[7.320133] (-) TimerEvent: {}
+[7.420488] (-) TimerEvent: {}
+[7.520774] (-) TimerEvent: {}
+[7.621067] (-) TimerEvent: {}
+[7.721348] (-) TimerEvent: {}
+[7.821635] (-) TimerEvent: {}
+[7.921926] (-) TimerEvent: {}
+[8.022215] (-) TimerEvent: {}
+[8.122747] (-) TimerEvent: {}
+[8.223045] (-) TimerEvent: {}
+[8.323352] (-) TimerEvent: {}
+[8.423654] (-) TimerEvent: {}
+[8.523992] (-) TimerEvent: {}
+[8.624305] (-) TimerEvent: {}
+[8.724608] (-) TimerEvent: {}
+[8.824910] (-) TimerEvent: {}
+[8.925206] (-) TimerEvent: {}
+[9.025525] (-) TimerEvent: {}
+[9.125826] (-) TimerEvent: {}
+[9.226121] (-) TimerEvent: {}
+[9.326433] (-) TimerEvent: {}
+[9.426744] (-) TimerEvent: {}
+[9.527048] (-) TimerEvent: {}
+[9.627333] (-) TimerEvent: {}
+[9.727620] (-) TimerEvent: {}
+[9.827907] (-) TimerEvent: {}
+[9.928189] (-) TimerEvent: {}
+[10.028750] (-) TimerEvent: {}
+[10.129034] (-) TimerEvent: {}
+[10.229330] (-) TimerEvent: {}
+[10.329613] (-) TimerEvent: {}
+[10.429899] (-) TimerEvent: {}
+[10.530173] (-) TimerEvent: {}
+[10.630482] (-) TimerEvent: {}
+[10.730767] (-) TimerEvent: {}
+[10.831052] (-) TimerEvent: {}
+[10.931338] (-) TimerEvent: {}
+[11.031846] (-) TimerEvent: {}
+[11.132131] (-) TimerEvent: {}
+[11.232429] (-) TimerEvent: {}
+[11.332709] (-) TimerEvent: {}
+[11.432993] (-) TimerEvent: {}
+[11.533295] (-) TimerEvent: {}
+[11.633576] (-) TimerEvent: {}
+[11.733861] (-) TimerEvent: {}
+[11.834142] (-) TimerEvent: {}
+[11.934668] (-) TimerEvent: {}
+[12.034955] (-) TimerEvent: {}
+[12.135245] (-) TimerEvent: {}
+[12.235545] (-) TimerEvent: {}
+[12.335831] (-) TimerEvent: {}
+[12.436117] (-) TimerEvent: {}
+[12.536409] (-) TimerEvent: {}
+[12.636695] (-) TimerEvent: {}
+[12.736986] (-) TimerEvent: {}
+[12.837283] (-) TimerEvent: {}
+[12.937577] (-) TimerEvent: {}
+[13.037864] (-) TimerEvent: {}
+[13.138155] (-) TimerEvent: {}
+[13.238456] (-) TimerEvent: {}
+[13.338744] (-) TimerEvent: {}
+[13.439030] (-) TimerEvent: {}
+[13.539316] (-) TimerEvent: {}
+[13.639588] (-) TimerEvent: {}
+[13.739872] (-) TimerEvent: {}
+[13.840159] (-) TimerEvent: {}
+[13.940460] (-) TimerEvent: {}
+[14.040746] (-) TimerEvent: {}
+[14.141030] (-) TimerEvent: {}
+[14.241331] (-) TimerEvent: {}
+[14.341616] (-) TimerEvent: {}
+[14.441901] (-) TimerEvent: {}
+[14.542185] (-) TimerEvent: {}
+[14.642484] (-) TimerEvent: {}
+[14.742770] (-) TimerEvent: {}
+[14.843055] (-) TimerEvent: {}
+[14.943486] (-) TimerEvent: {}
+[15.044258] (-) TimerEvent: {}
+[15.144860] (-) TimerEvent: {}
+[15.245299] (-) TimerEvent: {}
+[15.345626] (-) TimerEvent: {}
+[15.445942] (-) TimerEvent: {}
+[15.546250] (-) TimerEvent: {}
+[15.646567] (-) TimerEvent: {}
+[15.746858] (-) TimerEvent: {}
+[15.847148] (-) TimerEvent: {}
+[15.947456] (-) TimerEvent: {}
+[16.047750] (-) TimerEvent: {}
+[16.148050] (-) TimerEvent: {}
+[16.248371] (-) TimerEvent: {}
+[16.348689] (-) TimerEvent: {}
+[16.448988] (-) TimerEvent: {}
+[16.549519] (-) TimerEvent: {}
+[16.649815] (-) TimerEvent: {}
+[16.653867] (turtlebot3_localization) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable kf_node\x1b[0m\n'}
+[16.749952] (-) TimerEvent: {}
+[16.850261] (-) TimerEvent: {}
+[16.950681] (-) TimerEvent: {}
+[17.051183] (-) TimerEvent: {}
+[17.151564] (-) TimerEvent: {}
+[17.251870] (-) TimerEvent: {}
+[17.352206] (-) TimerEvent: {}
+[17.352917] (turtlebot3_localization) StdoutLine: {'line': b'[100%] Built target kf_node\n'}
+[17.365126] (turtlebot3_localization) CommandEnded: {'returncode': 0}
+[17.365797] (turtlebot3_localization) JobProgress: {'identifier': 'turtlebot3_localization', 'progress': 'install'}
+[17.374960] (turtlebot3_localization) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization'], 'cwd': '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'apo', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/apo', 'OLDPWD': '/home/apo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '1645', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'apo', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'apo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/apo-Legion-5-15ACH6H:@/tmp/.ICE-unix/1595,unix/apo-Legion-5-15ACH6H:/tmp/.ICE-unix/1595', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/ddf0da7d_06b5_4851_b08b_b67aa0139dcd', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.A2JY82', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.122', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/apo/turtlebot3_localization_project/build/turtlebot3_localization', 'TURTLEBOT3_MODEL': 'burger', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[17.382696] (turtlebot3_localization) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[17.383197] (turtlebot3_localization) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[17.383582] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/lib/turtlebot3_localization/kf_node\n'}
+[17.392901] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/package_run_dependencies/turtlebot3_localization\n'}
+[17.401974] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/parent_prefix_path/turtlebot3_localization\n'}
+[17.411187] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/ament_prefix_path.sh\n'}
+[17.420349] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/ament_prefix_path.dsv\n'}
+[17.429139] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/path.sh\n'}
+[17.437879] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/environment/path.dsv\n'}
+[17.446668] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.bash\n'}
+[17.452291] (-) TimerEvent: {}
+[17.456162] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.sh\n'}
+[17.465891] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.zsh\n'}
+[17.474960] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/local_setup.dsv\n'}
+[17.483906] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/package.dsv\n'}
+[17.492952] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/ament_index/resource_index/packages/turtlebot3_localization\n'}
+[17.501639] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/cmake/turtlebot3_localizationConfig.cmake\n'}
+[17.510513] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/cmake/turtlebot3_localizationConfig-version.cmake\n'}
+[17.519293] (turtlebot3_localization) StdoutLine: {'line': b'-- Symlinking: /home/apo/turtlebot3_localization_project/install/turtlebot3_localization/share/turtlebot3_localization/package.xml\n'}
+[17.529964] (turtlebot3_localization) CommandEnded: {'returncode': 0}
+[17.550710] (turtlebot3_localization) JobEnded: {'identifier': 'turtlebot3_localization', 'rc': 0}
+[17.551348] (-) EventReactorShutdown: {}
