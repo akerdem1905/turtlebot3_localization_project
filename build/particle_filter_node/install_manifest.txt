@@ -1,5 +1,6 @@
 /home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/pf_node
 /home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/kf_node
+/home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/ekf_node
 /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//launch/start.launch.py
 /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//config/filter_params.yaml
 /home/apo/ProLab/install/particle_filter_node/share/ament_index/resource_index/package_run_dependencies/particle_filter_node

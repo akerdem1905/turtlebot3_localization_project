@@ -47,9 +47,18 @@ def generate_launch_description():
         parameters=[{'use_sim_time': True}]
     )
 
+    ekf_node = Node(
+    package='particle_filter_node',
+    executable='ekf_node',
+    name='ekf_filter',
+    output='screen',
+    parameters=[{'use_sim_time': True}]
+    )
+
     return LaunchDescription([
         gazebo,
         nav2,
         particle_filter_node,
-        kalman_filter_node
+        kalman_filter_node,
+        ekf_node
     ])

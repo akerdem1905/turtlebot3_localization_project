@@ -223,6 +223,43 @@ kf_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/build
 .PHONY : kf_node/fast
 
+#=============================================================================
+# Target rules for targets named ekf_node
+
+# Build rule for target.
+ekf_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ekf_node
+.PHONY : ekf_node
+
+# fast build rule for target.
+ekf_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/build
+.PHONY : ekf_node/fast
+
+src/ekf.o: src/ekf.cpp.o
+.PHONY : src/ekf.o
+
+# target to build an object file
+src/ekf.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/src/ekf.cpp.o
+.PHONY : src/ekf.cpp.o
+
+src/ekf.i: src/ekf.cpp.i
+.PHONY : src/ekf.i
+
+# target to preprocess a source file
+src/ekf.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/src/ekf.cpp.i
+.PHONY : src/ekf.cpp.i
+
+src/ekf.s: src/ekf.cpp.s
+.PHONY : src/ekf.s
+
+# target to generate assembly for a file
+src/ekf.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/src/ekf.cpp.s
+.PHONY : src/ekf.cpp.s
+
 src/kf.o: src/kf.cpp.o
 .PHONY : src/kf.o
 
@@ -286,8 +323,12 @@ help:
 	@echo "... test"
 	@echo "... particle_filter_node_uninstall"
 	@echo "... uninstall"
+	@echo "... ekf_node"
 	@echo "... kf_node"
 	@echo "... pf_node"
+	@echo "... src/ekf.o"
+	@echo "... src/ekf.i"
+	@echo "... src/ekf.s"
 	@echo "... src/kf.o"
 	@echo "... src/kf.i"
 	@echo "... src/kf.s"

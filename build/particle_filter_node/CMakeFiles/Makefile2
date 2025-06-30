@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = /home/apo/ProLab/build/particle_filter_node
 # The main recursive "all" target.
 all: CMakeFiles/pf_node.dir/all
 all: CMakeFiles/kf_node.dir/all
+all: CMakeFiles/ekf_node.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,6 +77,7 @@ clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/particle_filter_node_uninstall.dir/clean
 clean: CMakeFiles/pf_node.dir/clean
 clean: CMakeFiles/kf_node.dir/clean
+clean: CMakeFiles/ekf_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -137,7 +139,7 @@ CMakeFiles/particle_filter_node_uninstall.dir/clean:
 CMakeFiles/pf_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pf_node.dir/build.make CMakeFiles/pf_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pf_node.dir/build.make CMakeFiles/pf_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/apo/ProLab/build/particle_filter_node/CMakeFiles --progress-num=3,4 "Built target pf_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/apo/ProLab/build/particle_filter_node/CMakeFiles --progress-num=5,6 "Built target pf_node"
 .PHONY : CMakeFiles/pf_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -163,7 +165,7 @@ CMakeFiles/pf_node.dir/clean:
 CMakeFiles/kf_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/apo/ProLab/build/particle_filter_node/CMakeFiles --progress-num=1,2 "Built target kf_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/apo/ProLab/build/particle_filter_node/CMakeFiles --progress-num=3,4 "Built target kf_node"
 .PHONY : CMakeFiles/kf_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -181,6 +183,32 @@ kf_node: CMakeFiles/kf_node.dir/rule
 CMakeFiles/kf_node.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/clean
 .PHONY : CMakeFiles/kf_node.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ekf_node.dir
+
+# All Build rule for target.
+CMakeFiles/ekf_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/apo/ProLab/build/particle_filter_node/CMakeFiles --progress-num=1,2 "Built target ekf_node"
+.PHONY : CMakeFiles/ekf_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ekf_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/apo/ProLab/build/particle_filter_node/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ekf_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/apo/ProLab/build/particle_filter_node/CMakeFiles 0
+.PHONY : CMakeFiles/ekf_node.dir/rule
+
+# Convenience name for target.
+ekf_node: CMakeFiles/ekf_node.dir/rule
+.PHONY : ekf_node
+
+# clean rule for target.
+CMakeFiles/ekf_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/clean
+.PHONY : CMakeFiles/ekf_node.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

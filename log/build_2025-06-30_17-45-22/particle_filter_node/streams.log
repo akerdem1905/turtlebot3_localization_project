@@ -1,0 +1,101 @@
+[0.012s] Invoking command in '/home/apo/ProLab/build/particle_filter_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/ProLab/build/particle_filter_node -- -j12 -l12
+[0.071s] [ 33%] Built target pf_node
+[0.080s] [ 83%] [32mBuilding CXX object CMakeFiles/ekf_node.dir/src/ekf.cpp.o[0m
+[0.081s] [ 83%] Built target kf_node
+[2.796s] [01m[K/home/apo/ProLab/src/ekf.cpp:[m[K In member function ‘[01m[Kvoid EKFLocalization::[01;32m[KsensorCallback[m[K(sensor_msgs::msg::Imu_<std::allocator<void> >::ConstSharedPtr, sensor_msgs::msg::JointState_<std::allocator<void> >::ConstSharedPtr)[m[K’:
+[2.796s] [01m[K/home/apo/ProLab/src/ekf.cpp:74:22:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator-[m[K’ (operand types are ‘[01m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >[m[K’ and ‘[01m[Krclcpp::Time[m[K’)
+[2.796s]    74 |     double dt = ([32m[Know[m[K [01;31m[K-[m[K [34m[Klast_time_[m[K).seconds();
+[2.796s]       |                  [32m[K~~~[m[K [01;31m[K^[m[K [34m[K~~~~~~~~~~[m[K
+[2.796s]       |                  [32m[K|[m[K     [34m[K|[m[K
+[2.797s]       |                  [32m[K|[m[K     [34m[Krclcpp::Time[m[K
+[2.797s]       |                  [32m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >[m[K
+[2.797s] In file included from [01m[K/usr/include/c++/13/bits/stl_algobase.h:67[m[K,
+[2.797s]                  from [01m[K/usr/include/c++/13/bits/stl_uninitialized.h:63[m[K,
+[2.797s]                  from [01m[K/usr/include/c++/13/memory:69[m[K,
+[2.797s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:169[m[K,
+[2.797s]                  from [01m[K/home/apo/ProLab/src/ekf.cpp:1[m[K:
+[2.797s] [01m[K/usr/include/c++/13/bits/stl_iterator.h:625:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _IteratorL, class _IteratorR> constexpr decltype ((__y.base() - __x.base())) std::[01;32m[Koperator-[m[K(const reverse_iterator<_Iterator>&, const reverse_iterator<_IteratorR>&)[m[K’
+[2.797s]   625 |     [01;36m[Koperator[m[K-(const reverse_iterator<_IteratorL>& __x,
+[2.797s]       |     [01;36m[K^~~~~~~~[m[K
+[2.797s] [01m[K/usr/include/c++/13/bits/stl_iterator.h:625:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.797s] [01m[K/home/apo/ProLab/src/ekf.cpp:74:24:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >[m[K’ is not derived from ‘[01m[Kconst std::reverse_iterator<_Iterator>[m[K’
+[2.797s]    74 |     double dt = (now - [01;36m[Klast_time_[m[K).seconds();
+[2.797s]       |                        [01;36m[K^~~~~~~~~~[m[K
+[2.798s] [01m[K/usr/include/c++/13/bits/stl_iterator.h:1800:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _IteratorL, class _IteratorR> constexpr decltype ((__x.base() - __y.base())) std::[01;32m[Koperator-[m[K(const move_iterator<_IteratorL>&, const move_iterator<_IteratorR>&)[m[K’
+[2.798s]  1800 |     [01;36m[Koperator[m[K-(const move_iterator<_IteratorL>& __x,
+[2.798s]       |     [01;36m[K^~~~~~~~[m[K
+[2.798s] [01m[K/usr/include/c++/13/bits/stl_iterator.h:1800:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.798s] [01m[K/home/apo/ProLab/src/ekf.cpp:74:24:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >[m[K’ is not derived from ‘[01m[Kconst std::move_iterator<_IteratorL>[m[K’
+[2.798s]    74 |     double dt = (now - [01;36m[Klast_time_[m[K).seconds();
+[2.798s]       |                        [01;36m[K^~~~~~~~~~[m[K
+[2.798s] In file included from [01m[K/usr/include/eigen3/Eigen/Core:50[m[K,
+[2.798s]                  from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+[2.798s]                  from [01m[K/home/apo/ProLab/src/ekf.cpp:10[m[K:
+[2.798s] [01m[K/usr/include/c++/13/complex:365:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::[01;32m[Koperator-[m[K(const complex<_Tp>&, const complex<_Tp>&)[m[K’
+[2.798s]   365 |     [01;36m[Koperator[m[K-(const complex<_Tp>& __x, const complex<_Tp>& __y)
+[2.798s]       |     [01;36m[K^~~~~~~~[m[K
+[2.799s] [01m[K/usr/include/c++/13/complex:365:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.799s] [01m[K/home/apo/ProLab/src/ekf.cpp:74:24:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >[m[K’ is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+[2.799s]    74 |     double dt = (now - [01;36m[Klast_time_[m[K).seconds();
+[2.799s]       |                        [01;36m[K^~~~~~~~~~[m[K
+[2.799s] [01m[K/usr/include/c++/13/complex:374:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::[01;32m[Koperator-[m[K(const complex<_Tp>&, const _Tp&)[m[K’
+[2.799s]   374 |     [01;36m[Koperator[m[K-(const complex<_Tp>& __x, const _Tp& __y)
+[2.799s]       |     [01;36m[K^~~~~~~~[m[K
+[2.799s] [01m[K/usr/include/c++/13/complex:374:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.799s] [01m[K/home/apo/ProLab/src/ekf.cpp:74:24:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >[m[K’ is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+[2.799s]    74 |     double dt = (now - [01;36m[Klast_time_[m[K).seconds();
+[2.799s]       |                        [01;36m[K^~~~~~~~~~[m[K
+[2.800s] [01m[K/usr/include/c++/13/complex:383:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::[01;32m[Koperator-[m[K(const _Tp&, const complex<_Tp>&)[m[K’
+[2.800s]   383 |     [01;36m[Koperator[m[K-(const _Tp& __x, const complex<_Tp>& __y)
+[2.800s]       |     [01;36m[K^~~~~~~~[m[K
+[2.800s] [01m[K/usr/include/c++/13/complex:383:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.800s] [01m[K/home/apo/ProLab/src/ekf.cpp:74:24:[m[K [01;36m[Knote: [m[K  ‘[01m[Krclcpp::Time[m[K’ is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+[2.800s]    74 |     double dt = (now - [01;36m[Klast_time_[m[K).seconds();
+[2.800s]       |                        [01;36m[K^~~~~~~~~~[m[K
+[2.800s] [01m[K/usr/include/c++/13/complex:460:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Tp> std::complex<_Tp> std::[01;32m[Koperator-[m[K(const complex<_Tp>&)[m[K’
+[2.800s]   460 |     [01;36m[Koperator[m[K-(const complex<_Tp>& __x)
+[2.800s]       |     [01;36m[K^~~~~~~~[m[K
+[2.800s] [01m[K/usr/include/c++/13/complex:460:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[2.800s] [01m[K/home/apo/ProLab/src/ekf.cpp:74:24:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg::Time_<std::allocator<void> >[m[K’ is not derived from ‘[01m[Kconst std::complex<_Tp>[m[K’
+[2.801s]    74 |     double dt = (now - [01;36m[Klast_time_[m[K).seconds();
+[2.801s]       |                        [01;36m[K^~~~~~~~~~[m[K
+[2.801s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/time.hpp:24[m[K,
+[2.801s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/clock.hpp:24[m[K,
+[2.801s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:38[m[K,
+[2.801s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.801s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.801s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.801s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.801s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22[m[K,
+[2.801s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38[m[K,
+[2.801s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.801s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.802s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K:
+[2.802s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:168:1:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kbuiltin_interfaces::msg::Time rclcpp::[01;32m[Koperator-[m[K(const builtin_interfaces::msg::Time&, const Duration&)[m[K’
+[2.802s]   168 | [01;36m[Koperator[m[K-(const builtin_interfaces::msg::Time & lhs, const rclcpp::Duration & rhs);
+[2.802s]       | [01;36m[K^~~~~~~~[m[K
+[2.802s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/duration.hpp:168:79:[m[K [01;36m[Knote: [m[K  no known conversion for argument 2 from ‘[01m[Krclcpp::Time[m[K’ to ‘[01m[Kconst rclcpp::Duration&[m[K’
+[2.802s]   168 | operator-(const builtin_interfaces::msg::Time & lhs, [01;36m[Kconst rclcpp::Duration & rhs[m[K);
+[2.802s]       |                                                      [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[3.849s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:42[m[K:
+[3.849s] /opt/ros/jazzy/include/rclcpp/rclcpp/function_traits.hpp: In instantiation of ‘[01m[Kstruct rclcpp::function_traits::function_traits<EKFLocalization::EKFLocalization()::<lambda(const auto:45&)> >[m[K’:
+[3.849s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp:396:25:[m[K   recursively required by substitution of ‘[01m[Ktemplate<class MessageT, class CallbackT> struct rclcpp::detail::SubscriptionCallbackTypeHelper<MessageT, CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<_Tp>, const rclcpp::MessageInfo&)> >::value, void>::type> [35m[K[with MessageT = geometry_msgs::msg::TwistStamped_<std::allocator<void> >; CallbackT = EKFLocalization::EKFLocalization()::<lambda(const auto:45&)>][m[K[m[K’
+[3.849s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_subscription_callback.hpp:396:25:[m[K   required from ‘[01m[Krclcpp::AnySubscriptionCallback<MessageT, AllocatorT> rclcpp::AnySubscriptionCallback<MessageT, AllocatorT>::[01;32m[Kset[m[K(CallbackT) [35m[K[with CallbackT = EKFLocalization::EKFLocalization()::<lambda(const auto:45&)>; MessageT = geometry_msgs::msg::TwistStamped_<std::allocator<void> >; AllocatorT = std::allocator<void>][m[K[m[K’
+[3.849s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/subscription_factory.hpp:93:32:[m[K   required from ‘[01m[Krclcpp::SubscriptionFactory rclcpp::[01;32m[Kcreate_subscription_factory[m[K(CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr, std::shared_ptr<topic_statistics::SubscriptionTopicStatistics>) [35m[K[with MessageT = geometry_msgs::msg::TwistStamped_<std::allocator<void> >; CallbackT = EKFLocalization::EKFLocalization()::<lambda(const auto:45&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<geometry_msgs::msg::TwistStamped_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<geometry_msgs::msg::TwistStamped_<std::allocator<void> >, std::allocator<void> >; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<geometry_msgs::msg::TwistStamped_<std::allocator<void> >, std::allocator<void> > >][m[K[m[K’
+[3.849s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:121:63:[m[K   required from ‘[01m[Kstd::shared_ptr<ROSMessageT> rclcpp::detail::[01;32m[Kcreate_subscription[m[K(NodeParametersT&, NodeTopicsT&, const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [35m[K[with MessageT = geometry_msgs::msg::TwistStamped_<std::allocator<void> >; CallbackT = EKFLocalization::EKFLocalization()::<lambda(const auto:45&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<geometry_msgs::msg::TwistStamped_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<geometry_msgs::msg::TwistStamped_<std::allocator<void> >, std::allocator<void> >; NodeParametersT = rclcpp::Node; NodeTopicsT = rclcpp::Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<geometry_msgs::msg::TwistStamped_<std::allocator<void> >, std::allocator<void> > >][m[K[m[K’
+[3.849s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/create_subscription.hpp:190:76:[m[K   required from ‘[01m[Kstd::shared_ptr<ROSMessageT> rclcpp::[01;32m[Kcreate_subscription[m[K(NodeT&, const std::string&, const QoS&, CallbackT&&, const SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [35m[K[with MessageT = geometry_msgs::msg::TwistStamped_<std::allocator<void> >; CallbackT = EKFLocalization::EKFLocalization()::<lambda(const auto:45&)>; AllocatorT = std::allocator<void>; SubscriptionT = Subscription<geometry_msgs::msg::TwistStamped_<std::allocator<void> > >; MessageMemoryStrategyT = message_memory_strategy::MessageMemoryStrategy<geometry_msgs::msg::TwistStamped_<std::allocator<void> >, std::allocator<void> >; NodeT = Node; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<message_memory_strategy::MessageMemoryStrategy<geometry_msgs::msg::TwistStamped_<std::allocator<void> >, std::allocator<void> > >][m[K[m[K’
+[3.849s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:99:47:[m[K   required from ‘[01m[Kstd::shared_ptr<ROSMessageT> rclcpp::Node::[01;32m[Kcreate_subscription[m[K(const std::string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr) [35m[K[with MessageT = geometry_msgs::msg::TwistStamped_<std::allocator<void> >; CallbackT = EKFLocalization::EKFLocalization()::<lambda(const auto:45&)>; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<geometry_msgs::msg::TwistStamped_<std::allocator<void> > >; MessageMemoryStrategyT = rclcpp::message_memory_strategy::MessageMemoryStrategy<geometry_msgs::msg::TwistStamped_<std::allocator<void> >, std::allocator<void> >; std::string = std::__cxx11::basic_string<char>; typename MessageMemoryStrategyT::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<geometry_msgs::msg::TwistStamped_<std::allocator<void> >, std::allocator<void> > >][m[K[m[K’
+[3.850s] [01m[K/home/apo/ProLab/src/ekf.cpp:25:73:[m[K   required from here
+[3.850s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/function_traits.hpp:51:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdecltype[m[K’ cannot resolve address of overloaded function
+[3.850s]    51 |   using [01;31m[Karguments[m[K = typename tuple_tail<
+[3.850s]       |         [01;31m[K^~~~~~~~~[m[K
+[3.850s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/function_traits.hpp:57:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdecltype[m[K’ cannot resolve address of overloaded function
+[3.850s]    57 |   using [01;31m[Kargument_type[m[K = typename std::tuple_element<N, arguments>::type;
+[3.850s]       |         [01;31m[K^~~~~~~~~~~~~[m[K
+[3.850s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/function_traits.hpp:59:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kdecltype[m[K’ cannot resolve address of overloaded function
+[3.850s]    59 |   using [01;31m[Kreturn_type[m[K = typename function_traits<decltype( &FunctionT::operator())>::return_type;
+[3.850s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[8.447s] gmake[2]: *** [CMakeFiles/ekf_node.dir/build.make:76: CMakeFiles/ekf_node.dir/src/ekf.cpp.o] Error 1
+[8.447s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/ekf_node.dir/all] Error 2
+[8.447s] gmake: *** [Makefile:146: all] Error 2
+[8.450s] Invoked command in '/home/apo/ProLab/build/particle_filter_node' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/ProLab/build/particle_filter_node -- -j12 -l12

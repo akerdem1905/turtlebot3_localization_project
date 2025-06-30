@@ -38,9 +38,23 @@ ament_target_dependencies(kf_node
   message_filters
 )
 
+add_executable(ekf_node src/ekf.cpp)
+target_link_libraries(ekf_node Eigen3::Eigen)
+ament_target_dependencies(ekf_node
+  rclcpp
+  rclcpp_action
+  geometry_msgs
+  nav_msgs
+  sensor_msgs
+  message_filters
+  tf2
+  tf2_geometry_msgs
+)
+
 install(TARGETS
   pf_node
   kf_node
+  ekf_node
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -1,0 +1,8 @@
+[01m[K/home/apo/ProLab/src/ekf.cpp:[m[K In lambda function:
+[01m[K/home/apo/ProLab/src/ekf.cpp:94:73:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kparams[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   94 |     auto param_callback = [this]([01;35m[Kconst std::vector<rclcpp::Parameter> & params[m[K) {
+      |                                  [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/apo/ProLab/src/ekf.cpp:[m[K In member function ‘[01m[Kstd::pair<double, double> EKF_IMU::[01;32m[KcomputeVelocitiesFromWheels[m[K(sensor_msgs::msg::JointState_<std::allocator<void> >::ConstSharedPtr)[m[K’:
+[01m[K/home/apo/ProLab/src/ekf.cpp:200:12:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kv_angular[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  200 |     double [01;35m[Kv_angular[m[K = (v_right - v_left) / wheelbase_;
+      |            [01;35m[K^~~~~~~~~[m[K
