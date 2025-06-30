@@ -19,6 +19,8 @@
   <depend>eigen3_cmake_module</depend>
   <build_depend>Eigen3</build_depend>
   <exec_depend>Eigen3</exec_depend>
+  <depend>nav2_msgs</depend>
+
 
 
   <export>

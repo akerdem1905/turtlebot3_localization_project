@@ -1,7 +1,0 @@
-[01m[K/home/apo/ProLab/src/pf.cpp:[m[K In member function ‘[01m[Kvoid ParticleFilterNode::[01;32m[Kcorrect[m[K(double, double)[m[K’:
-[01m[K/home/apo/ProLab/src/pf.cpp:119:25:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kv_meas[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
-  119 |     void correct([01;35m[Kdouble v_meas[m[K, double omega_meas) {
-      |                  [01;35m[K~~~~~~~^~~~~~[m[K
-[01m[K/home/apo/ProLab/src/pf.cpp:119:40:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Komega_meas[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
-  119 |     void correct(double v_meas, [01;35m[Kdouble omega_meas[m[K) {
-      |                                 [01;35m[K~~~~~~~^~~~~~~~~~[m[K

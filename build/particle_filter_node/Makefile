@@ -236,6 +236,19 @@ ekf_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ekf_node.dir/build.make CMakeFiles/ekf_node.dir/build
 .PHONY : ekf_node/fast
 
+#=============================================================================
+# Target rules for targets named waypoint_navigator
+
+# Build rule for target.
+waypoint_navigator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 waypoint_navigator
+.PHONY : waypoint_navigator
+
+# fast build rule for target.
+waypoint_navigator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/build
+.PHONY : waypoint_navigator/fast
+
 src/ekf.o: src/ekf.cpp.o
 .PHONY : src/ekf.o
 
@@ -308,6 +321,30 @@ src/pf.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pf_node.dir/build.make CMakeFiles/pf_node.dir/src/pf.cpp.s
 .PHONY : src/pf.cpp.s
 
+src/waypoint_sender.o: src/waypoint_sender.cpp.o
+.PHONY : src/waypoint_sender.o
+
+# target to build an object file
+src/waypoint_sender.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_sender.cpp.o
+.PHONY : src/waypoint_sender.cpp.o
+
+src/waypoint_sender.i: src/waypoint_sender.cpp.i
+.PHONY : src/waypoint_sender.i
+
+# target to preprocess a source file
+src/waypoint_sender.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_sender.cpp.i
+.PHONY : src/waypoint_sender.cpp.i
+
+src/waypoint_sender.s: src/waypoint_sender.cpp.s
+.PHONY : src/waypoint_sender.s
+
+# target to generate assembly for a file
+src/waypoint_sender.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_sender.cpp.s
+.PHONY : src/waypoint_sender.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -326,6 +363,7 @@ help:
 	@echo "... ekf_node"
 	@echo "... kf_node"
 	@echo "... pf_node"
+	@echo "... waypoint_navigator"
 	@echo "... src/ekf.o"
 	@echo "... src/ekf.i"
 	@echo "... src/ekf.s"
@@ -335,6 +373,9 @@ help:
 	@echo "... src/pf.o"
 	@echo "... src/pf.i"
 	@echo "... src/pf.s"
+	@echo "... src/waypoint_sender.o"
+	@echo "... src/waypoint_sender.i"
+	@echo "... src/waypoint_sender.s"
 .PHONY : help
 
 
