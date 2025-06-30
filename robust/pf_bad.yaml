@@ -1,0 +1,10 @@
+num_particles: 500
+wheel_radius: 0.033
+wheelbase: 0.287
+
+init_spread_pos: 1.0
+init_spread_theta: 1.5
+
+motion_noise_trans: 0.1
+motion_noise_rot: 0.2
+measurement_noise_omega: 0.1
