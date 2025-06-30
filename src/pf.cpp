@@ -17,13 +17,17 @@ struct PFParticle {
 class ParticleFilterNode : public rclcpp::Node {
 public:
     ParticleFilterNode() : Node("particle_filter_node"), gen_(std::random_device{}()) {
-        //this->declare_parameter("use_sim_time", true);
-        particle_count_ = this->declare_parameter("num_particles", 1000);
-        wheel_radius_ = this->declare_parameter("wheel_radius", 0.033);
-        wheel_base_ = this->declare_parameter("wheelbase", 0.287);
-        noise_vel_ = this->declare_parameter("measurement_noise_v", 0.05);
-        noise_omega_ = this->declare_parameter("measurement_noise_omega", 0.02);
-        motion_noise_ = this->declare_parameter("motion_noise", 0.001);
+        particle_count_ = declare_parameter("num_particles", 500);
+        wheel_radius_ = declare_parameter("wheel_radius", 0.033);
+        wheel_base_ = declare_parameter("wheelbase", 0.287);
+
+        measurement_noise_v_ = declare_parameter("measurement_noise_v", 0.02);
+        measurement_noise_omega_ = declare_parameter("measurement_noise_omega", 0.02);
+        motion_noise_trans_ = declare_parameter("motion_noise_trans", 0.015);
+        motion_noise_rot_ = declare_parameter("motion_noise_rot", 0.03);
+
+        init_spread_pos_ = declare_parameter("init_spread_pos", 0.01);
+        init_spread_theta_ = declare_parameter("init_spread_theta", 0.05);
 
         initializeParticles();
 
@@ -32,7 +36,7 @@ public:
         sync_ = std::make_shared<message_filters::Synchronizer<SyncPolicy>>(SyncPolicy(10), imu_sub_, joint_sub_);
         sync_->registerCallback(std::bind(&ParticleFilterNode::sensorCallback, this, std::placeholders::_1, std::placeholders::_2));
 
-        pose_pub_ = this->create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("/prediction", 10);
+        pose_pub_ = create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("/prediction", 10);
         last_update_ = this->now();
 
         RCLCPP_INFO(this->get_logger(), "Particle Filter Node gestartet");
@@ -44,23 +48,26 @@ private:
     std::vector<PFParticle> particles_;
     int particle_count_;
     double wheel_radius_, wheel_base_;
-    double noise_vel_, noise_omega_, motion_noise_;
-    rclcpp::Time last_update_;
+    double motion_noise_trans_, motion_noise_rot_;
+    double measurement_noise_v_, measurement_noise_omega_;
+    double init_spread_pos_, init_spread_theta_;
 
     std::mt19937 gen_;
+    rclcpp::Time last_update_;
+
     message_filters::Subscriber<sensor_msgs::msg::Imu> imu_sub_;
     message_filters::Subscriber<sensor_msgs::msg::JointState> joint_sub_;
     std::shared_ptr<message_filters::Synchronizer<SyncPolicy>> sync_;
     rclcpp::Publisher<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr pose_pub_;
 
     void initializeParticles() {
-        std::uniform_real_distribution<double> pos_dist(-0.1, 0.1);
-        std::uniform_real_distribution<double> angle_dist(-0.1, 0.1);
+        std::normal_distribution<double> pos_noise(0.0, init_spread_pos_);
+        std::normal_distribution<double> angle_noise(0.0, init_spread_theta_);
         particles_.resize(particle_count_);
         for (auto& p : particles_) {
-            p.x = pos_dist(gen_);
-            p.y = pos_dist(gen_);
-            p.heading = angle_dist(gen_);
+            p.x = pos_noise(gen_);
+            p.y = pos_noise(gen_);
+            p.heading = angle_noise(gen_);
             p.weight = 1.0 / particle_count_;
         }
     }
@@ -98,31 +105,42 @@ private:
     }
 
     void predict(double dt, double v, double omega) {
-        std::normal_distribution<double> noise(0.0, motion_noise_);
+        std::normal_distribution<double> trans_noise(0.0, motion_noise_trans_);
+        std::normal_distribution<double> rot_noise(0.0, motion_noise_rot_);
+
         for (auto& p : particles_) {
-            if (std::abs(omega) < 1e-5) {
-                p.x += v * std::cos(p.heading) * dt;
-                p.y += v * std::sin(p.heading) * dt;
+            double noisy_v = v + trans_noise(gen_);
+            double noisy_omega = omega + rot_noise(gen_);
+
+            if (std::abs(noisy_omega) < 1e-5) {
+                p.x += noisy_v * std::cos(p.heading) * dt;
+                p.y += noisy_v * std::sin(p.heading) * dt;
             } else {
-                double R = v / omega;
-                double dtheta = omega * dt;
+                double R = noisy_v / noisy_omega;
+                double dtheta = noisy_omega * dt;
                 p.x += R * (std::sin(p.heading + dtheta) - std::sin(p.heading));
                 p.y += R * (std::cos(p.heading) - std::cos(p.heading + dtheta));
                 p.heading += dtheta;
             }
-            p.x += noise(gen_) * dt;
-            p.y += noise(gen_) * dt;
-            p.heading = normalizeAngle(p.heading + noise(gen_) * dt);
+            p.heading = normalizeAngle(p.heading);
         }
     }
 
     void correct(double v_meas, double omega_meas) {
         double sum_weights = 0.0;
         for (auto& p : particles_) {
-            double likelihood = 1.0;  // Placeholder für echtes Modell
-            p.weight = likelihood;
+            // Fehler
+            double error_v = v_meas - v_meas;  // für später: partikelabhängig
+            double error_omega = omega_meas - omega_meas;
+
+            // Likelihoods (momentan beide gleich, weil keine alternative Berechnung)
+            double lv = std::exp(-0.5 * error_v * error_v / (measurement_noise_v_ * measurement_noise_v_));
+            double lo = std::exp(-0.5 * error_omega * error_omega / (measurement_noise_omega_ * measurement_noise_omega_));
+
+            p.weight = lv * lo;
             sum_weights += p.weight;
         }
+
         if (sum_weights > 0.0) {
             for (auto& p : particles_) {
                 p.weight /= sum_weights;

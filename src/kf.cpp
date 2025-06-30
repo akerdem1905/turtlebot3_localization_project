@@ -12,12 +12,18 @@
 class KalmanFilterNode : public rclcpp::Node {
 public:
     KalmanFilterNode() : Node("kalman_filter_node") {
-        //this->declare_parameter("use_sim_time", true);
-
-        state_ = Eigen::VectorXd::Zero(3);      // x, y, theta
+        state_ = Eigen::VectorXd::Zero(3);  // [x, y, theta]
         covariance_ = Eigen::MatrixXd::Identity(3, 3) * 0.01;
-        Q_ = Eigen::MatrixXd::Identity(3, 3) * 0.001; // process noise
-        R_ = Eigen::MatrixXd::Identity(2, 2) * 0.05;   // measurement noise
+
+        // Prozessrauschen: kleine Unsicherheit bei Bewegung
+        Q_ = Eigen::MatrixXd::Zero(3, 3);
+        Q_(0, 0) = 0.002;  // x
+        Q_(1, 1) = 0.002;  // y
+        Q_(2, 2) = 0.005;  // theta
+
+        // Messrauschen: nur ω (gyro) wird gemessen
+        R_ = Eigen::MatrixXd::Identity(1, 1);
+        R_(0, 0) = 0.02;  // Gyro noise
 
         imu_sub_.subscribe(this, "/imu");
         joint_sub_.subscribe(this, "/joint_states");
@@ -37,7 +43,6 @@ private:
     Eigen::MatrixXd covariance_;
     Eigen::MatrixXd Q_;
     Eigen::MatrixXd R_;
-
     rclcpp::Time last_time_;
 
     message_filters::Subscriber<sensor_msgs::msg::Imu> imu_sub_;
@@ -48,7 +53,7 @@ private:
     void callback(const sensor_msgs::msg::Imu::ConstSharedPtr imu_msg,
                   const sensor_msgs::msg::JointState::ConstSharedPtr joint_msg) {
         double dt = (this->now() - last_time_).seconds();
-        if (dt <= 0.0 || dt > 0.5) {
+        if (dt <= 0.0 || dt > 1.0) {
             last_time_ = this->now();
             return;
         }
@@ -71,7 +76,8 @@ private:
             else if (joint_msg->name[i] == "wheel_right_joint")
                 v_right = joint_msg->velocity[i] * wheel_radius;
         }
-        double v = (v_left + v_right) / 2.0;
+
+        double v = (v_left + v_right) * 0.5;
         double omega = (v_right - v_left) / wheel_base;
         return {v, omega};
     }
@@ -79,18 +85,21 @@ private:
     void predict(double dt, double v, double omega) {
         double theta = state_(2);
 
+        // Bewegungsmodell
         Eigen::VectorXd u(2);
         u << v * dt, omega * dt;
 
         Eigen::VectorXd predicted = state_;
-        predicted(0) += u(0) * std::cos(theta);
-        predicted(1) += u(0) * std::sin(theta);
-        predicted(2) += u(1);
+        predicted(0) += u(0) * std::cos(theta); // x
+        predicted(1) += u(0) * std::sin(theta); // y
+        predicted(2) += u(1);                   // theta
 
+        // Ableitung des Bewegungsmodells (Jacobi-Matrix)
         Eigen::MatrixXd A = Eigen::MatrixXd::Identity(3, 3);
         A(0, 2) = -u(0) * std::sin(theta);
-        A(1, 2) = u(0) * std::cos(theta);
+        A(1, 2) =  u(0) * std::cos(theta);
 
+        // Kontrollmatrix
         Eigen::MatrixXd B(3, 2);
         B << std::cos(theta), 0,
              std::sin(theta), 0,
@@ -98,29 +107,34 @@ private:
 
         state_ = predicted;
         covariance_ = A * covariance_ * A.transpose() + Q_;
+        state_(2) = normalizeAngle(state_(2));
     }
 
     void correct(const sensor_msgs::msg::Imu::ConstSharedPtr imu_msg) {
         double omega_measured = imu_msg->angular_velocity.z;
 
+        // Messvektor (nur ω)
         Eigen::VectorXd z(1);
         z << omega_measured;
 
+        // Messmatrix (bezieht sich nur auf θ)
         Eigen::MatrixXd H(1, 3);
         H << 0, 0, 1;
 
-        Eigen::MatrixXd S = H * covariance_ * H.transpose() + R_.block(0,0,1,1);
+        // Kalman Gain
+        Eigen::MatrixXd S = H * covariance_ * H.transpose() + R_;
         Eigen::MatrixXd K = covariance_ * H.transpose() * S.inverse();
 
+        // Innovation (Messfehler)
         Eigen::VectorXd y = z - H * state_;
+
         state_ += K * y;
         covariance_ = (Eigen::MatrixXd::Identity(3, 3) - K * H) * covariance_;
-
         state_(2) = normalizeAngle(state_(2));
     }
 
     void publish() {
-        auto msg = geometry_msgs::msg::PoseWithCovarianceStamped();
+        geometry_msgs::msg::PoseWithCovarianceStamped msg;
         msg.header.stamp = this->now();
         msg.header.frame_id = "odom";
 
@@ -145,6 +159,7 @@ private:
         return angle;
     }
 };
+
 int main(int argc, char* argv[]) {
     rclcpp::init(argc, argv);
     rclcpp::spin(std::make_shared<KalmanFilterNode>());

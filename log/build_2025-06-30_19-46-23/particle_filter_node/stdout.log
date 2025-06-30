@@ -1,0 +1,29 @@
+[ 16%] [32mBuilding CXX object CMakeFiles/kf_node.dir/src/kf.cpp.o[0m
+[ 50%] Built target pf_node
+[ 83%] Built target ekf_node
+[100%] [32m[1mLinking CXX executable kf_node[0m
+[100%] Built target kf_node
+-- Install configuration: ""
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/pf_node
+-- Installing: /home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/kf_node
+-- Set non-toolchain portion of runtime path of "/home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/kf_node" to ""
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/ekf_node
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//launch
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//launch/start.launch.py
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//config
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//config/filter_params.yaml
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/ament_index/resource_index/package_run_dependencies/particle_filter_node
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/ament_index/resource_index/parent_prefix_path/particle_filter_node
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/ament_prefix_path.sh
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/path.sh
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/path.dsv
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.bash
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.sh
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.zsh
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.dsv
+-- Installing: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.dsv
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/ament_index/resource_index/packages/particle_filter_node
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/cmake/particle_filter_nodeConfig.cmake
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/cmake/particle_filter_nodeConfig-version.cmake
+-- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.xml

@@ -1,45 +1,59 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from math import sqrt
+import os
 
-# Daten einlesen mit Zeitstempel
-odom = pd.read_csv('odom.csv')
-pf = pd.read_csv('prediction.csv')
-kf = pd.read_csv('kf_prediction.csv')
-ekf = pd.read_csv('ekf.csv')
+# ====== Datei-Namen ======
+files = {
+    "KF": "kf_prediction.csv",
+    "EKF": "ekf.csv",
+    "PF": "prediction.csv",
+    "Odom": "odom.csv"
+}
 
-# Interpolation auf Zeitbasis (Odom als Referenz)
-pf_interp = pf.set_index('t').reindex(odom['t'], method='nearest').reset_index()
-kf_interp = kf.set_index('t').reindex(odom['t'], method='nearest').reset_index()
-ekf_interp = ekf.set_index('t').reindex(odom['t'], method='nearest').reset_index()
+# ====== Dateien laden und prüfen ======
+data = {}
+for name, path in files.items():
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"{path} nicht gefunden")
+    df = pd.read_csv(path).drop_duplicates(subset='t')
+    data[name] = df
 
-# RMSE-Funktion
-def rmse(gt, est):
-    return sqrt(np.mean((gt['x'] - est['x'])**2 + (gt['y'] - est['y'])**2))
+# ====== Interpolation auf Odom-Zeitbasis ======
+odom = data["Odom"]
+rmse_results = {}
 
-# RMSE berechnen
-rmse_pf = rmse(odom, pf_interp)
-rmse_kf = rmse(odom, kf_interp)
-rmse_ekf = rmse(odom, ekf_interp)
+for label in ["KF", "EKF", "PF"]:
+    df = data[label]
+    df_interp = df.set_index('t').reindex(odom['t'], method='nearest').reset_index()
 
+    # RMSE
+    rmse_x = np.sqrt(np.mean((df_interp['x'] - odom['x'])**2))
+    rmse_y = np.sqrt(np.mean((df_interp['y'] - odom['y'])**2))
+    rmse_total = np.sqrt(rmse_x**2 + rmse_y**2)
+    rmse_results[label] = (rmse_x, rmse_y, rmse_total)
 
-print(f"📊 RMSE Particle Filter: {rmse_pf:.4f} m")
-print(f"📊 RMSE Kalman Filter:   {rmse_kf:.4f} m")
-print(f"📊 RMSE Extended Kalman Filter: {rmse_ekf:.4f} m")
+    # Speichern für Plot
+    data[label + "_interp"] = df_interp
 
-# Plot
-plt.figure(figsize=(8, 6))
-plt.plot(odom['x'], odom['y'], label='Ground Truth (odom)', linewidth=2)
-plt.plot(pf_interp['x'], pf_interp['y'], label='Particle Filter', linestyle='--')
-plt.plot(kf_interp['x'], kf_interp['y'], label='Kalman Filter', linestyle=':')
-plt.plot(ekf_interp['x'], ekf_interp['y'], label='Extended Kalman Filter', linestyle='-.')
+# ====== Ausgabe der RMSE-Werte ======
+print("📊 RMSE-Vergleich (in Metern):")
+for label, (rx, ry, rtotal) in rmse_results.items():
+    print(f"{label}: RMSE_x = {rx:.4f}, RMSE_y = {ry:.4f}, Gesamt = {rtotal:.4f}")
 
-plt.xlabel('x [m]')
-plt.ylabel('y [m]')
-plt.title('Trajectory Comparison')
-plt.legend()
+# ====== Plot ======
+plt.figure(figsize=(10, 6))
+plt.plot(odom['x'], odom['y'], label='Ground Truth (odom)', linewidth=2, color='black')
+
+for label in ["KF", "EKF", "PF"]:
+    interp = data[label + "_interp"]
+    plt.plot(interp['x'], interp['y'], label=f'{label} (RMSE={rmse_results[label][2]:.3f} m)', linestyle='--')
+
+plt.title("Trajektorienvergleich")
+plt.xlabel("x [m]")
+plt.ylabel("y [m]")
+plt.axis("equal")
 plt.grid(True)
+plt.legend()
 plt.tight_layout()
-plt.savefig('trajectory_comparison.png')
 plt.show()
