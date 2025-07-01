@@ -4,7 +4,7 @@ from pathlib import Path
 from rosbags.highlevel import AnyReader
 from rosbags.serde import deserialize_cdr
 
-bag_path = os.path.expanduser('../rosbag2_2025_07_01-17_41_20')
+bag_path = os.path.expanduser('../rosbag2_2025_07_01-17_58_02')
 
 topics_to_extract = {
     "/odom": "odom.csv",

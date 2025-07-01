@@ -61,7 +61,7 @@ def generate_launch_description():
         name='pattern_driver',
         output='screen',
         parameters=[{
-            'pattern': 'circle_straight_circle',           # Oder 'zigzag', 'circle_straight_circle', 'circle'
+            'pattern': 'zigzag',           # Oder 'zigzag', 'circle_straight_circle', 'circle'
             'linear_speed': 0.2,
             'angular_speed': 0.5,
             'duration': 25.0,

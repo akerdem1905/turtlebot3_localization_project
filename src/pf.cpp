@@ -11,9 +11,7 @@
 
 struct PFParticle {
     double x, y, heading, weight;
-    double last_x, last_y, last_heading;
-    PFParticle() : x(0.0), y(0.0), heading(0.0), weight(1.0),
-                   last_x(0.0), last_y(0.0), last_heading(0.0) {}
+    PFParticle() : x(0.0), y(0.0), heading(0.0), weight(1.0) {}
 };
 
 class ParticleFilterNode : public rclcpp::Node {
@@ -70,9 +68,6 @@ private:
             p.x = pos_noise(gen_);
             p.y = pos_noise(gen_);
             p.heading = angle_noise(gen_);
-            p.last_x = p.x;
-            p.last_y = p.y;
-            p.last_heading = p.heading;
             p.weight = 1.0 / particle_count_;
         }
     }
@@ -89,7 +84,7 @@ private:
         double omega_measured = imu_msg->angular_velocity.z;
 
         predict(dt, v, omega);
-        correct(v, omega_measured, dt);
+        correct(v, omega_measured);
         resample();
         publishPrediction();
 
@@ -114,10 +109,6 @@ private:
         std::normal_distribution<double> rot_noise(0.0, motion_noise_rot_);
 
         for (auto& p : particles_) {
-            p.last_x = p.x;
-            p.last_y = p.y;
-            p.last_heading = p.heading;
-
             double noisy_v = v + trans_noise(gen_);
             double noisy_omega = omega + rot_noise(gen_);
 
@@ -135,23 +126,16 @@ private:
         }
     }
 
-    void correct(double v_meas, double omega_meas, double dt) {
-        const double eps = 1e-6;
+    void correct(double v_meas, double omega_meas) {
         double sum_weights = 0.0;
-
         for (auto& p : particles_) {
-            double dx = p.x - p.last_x;
-            double dy = p.y - p.last_y;
-            double dtheta = normalizeAngle(p.heading - p.last_heading);
+            // Fehler
+            double error_v = v_meas - v_meas;  // für später: partikelabhängig
+            double error_omega = omega_meas - omega_meas;
 
-            double predicted_v = std::sqrt(dx * dx + dy * dy) / dt;
-            double predicted_omega = dtheta / dt;
-
-            double error_v = v_meas - predicted_v;
-            double error_omega = omega_meas - predicted_omega;
-
-            double lv = std::exp(-0.5 * error_v * error_v / (measurement_noise_v_ * measurement_noise_v_)) + eps;
-            double lo = std::exp(-0.5 * error_omega * error_omega / (measurement_noise_omega_ * measurement_noise_omega_)) + eps;
+            // Likelihoods (momentan beide gleich, weil keine alternative Berechnung)
+            double lv = std::exp(-0.5 * error_v * error_v / (measurement_noise_v_ * measurement_noise_v_));
+            double lo = std::exp(-0.5 * error_omega * error_omega / (measurement_noise_omega_ * measurement_noise_omega_));
 
             p.weight = lv * lo;
             sum_weights += p.weight;

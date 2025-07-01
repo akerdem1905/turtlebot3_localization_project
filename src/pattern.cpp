@@ -52,9 +52,9 @@ private:
             cmd.twist.angular.z = w;
         }
         else if (pattern == "zigzag") {
-            double t = fmod(elapsed, 4.0);
             cmd.twist.linear.x = v;
-            cmd.twist.angular.z = (t < 2.0) ? w : -w;
+            cmd.twist.angular.z = std::sin(phase_) * w * 2.5;  // Verstärkter Ausschlag
+            phase_ += 0.2;  // Schnellerer Wechsel
         }
         else if (pattern == "circle_straight_circle") {
             if (elapsed < 10.0) {
