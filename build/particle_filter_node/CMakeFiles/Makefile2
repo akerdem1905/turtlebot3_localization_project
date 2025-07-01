@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/apo/ProLab/build/particle_filter_node
 all: CMakeFiles/pf_node.dir/all
 all: CMakeFiles/kf_node.dir/all
 all: CMakeFiles/ekf_node.dir/all
-all: CMakeFiles/waypoint_navigator.dir/all
+all: CMakeFiles/pattern_node.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -79,7 +79,7 @@ clean: CMakeFiles/particle_filter_node_uninstall.dir/clean
 clean: CMakeFiles/pf_node.dir/clean
 clean: CMakeFiles/kf_node.dir/clean
 clean: CMakeFiles/ekf_node.dir/clean
-clean: CMakeFiles/waypoint_navigator.dir/clean
+clean: CMakeFiles/pattern_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -141,7 +141,7 @@ CMakeFiles/particle_filter_node_uninstall.dir/clean:
 CMakeFiles/pf_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pf_node.dir/build.make CMakeFiles/pf_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pf_node.dir/build.make CMakeFiles/pf_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/apo/ProLab/build/particle_filter_node/CMakeFiles --progress-num=5,6 "Built target pf_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/apo/ProLab/build/particle_filter_node/CMakeFiles --progress-num=7,8 "Built target pf_node"
 .PHONY : CMakeFiles/pf_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -213,30 +213,30 @@ CMakeFiles/ekf_node.dir/clean:
 .PHONY : CMakeFiles/ekf_node.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/waypoint_navigator.dir
+# Target rules for target CMakeFiles/pattern_node.dir
 
 # All Build rule for target.
-CMakeFiles/waypoint_navigator.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/apo/ProLab/build/particle_filter_node/CMakeFiles --progress-num=7,8 "Built target waypoint_navigator"
-.PHONY : CMakeFiles/waypoint_navigator.dir/all
+CMakeFiles/pattern_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pattern_node.dir/build.make CMakeFiles/pattern_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pattern_node.dir/build.make CMakeFiles/pattern_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/apo/ProLab/build/particle_filter_node/CMakeFiles --progress-num=5,6 "Built target pattern_node"
+.PHONY : CMakeFiles/pattern_node.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/waypoint_navigator.dir/rule: cmake_check_build_system
+CMakeFiles/pattern_node.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/apo/ProLab/build/particle_filter_node/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/waypoint_navigator.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pattern_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/apo/ProLab/build/particle_filter_node/CMakeFiles 0
-.PHONY : CMakeFiles/waypoint_navigator.dir/rule
+.PHONY : CMakeFiles/pattern_node.dir/rule
 
 # Convenience name for target.
-waypoint_navigator: CMakeFiles/waypoint_navigator.dir/rule
-.PHONY : waypoint_navigator
+pattern_node: CMakeFiles/pattern_node.dir/rule
+.PHONY : pattern_node
 
 # clean rule for target.
-CMakeFiles/waypoint_navigator.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/clean
-.PHONY : CMakeFiles/waypoint_navigator.dir/clean
+CMakeFiles/pattern_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pattern_node.dir/build.make CMakeFiles/pattern_node.dir/clean
+.PHONY : CMakeFiles/pattern_node.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

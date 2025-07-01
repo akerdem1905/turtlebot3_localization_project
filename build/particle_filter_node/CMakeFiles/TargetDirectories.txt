@@ -3,7 +3,7 @@
 /home/apo/ProLab/build/particle_filter_node/CMakeFiles/pf_node.dir
 /home/apo/ProLab/build/particle_filter_node/CMakeFiles/kf_node.dir
 /home/apo/ProLab/build/particle_filter_node/CMakeFiles/ekf_node.dir
-/home/apo/ProLab/build/particle_filter_node/CMakeFiles/waypoint_navigator.dir
+/home/apo/ProLab/build/particle_filter_node/CMakeFiles/pattern_node.dir
 /home/apo/ProLab/build/particle_filter_node/CMakeFiles/test.dir
 /home/apo/ProLab/build/particle_filter_node/CMakeFiles/edit_cache.dir
 /home/apo/ProLab/build/particle_filter_node/CMakeFiles/rebuild_cache.dir

@@ -15,8 +15,6 @@ find_package(message_filters REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(Eigen3 REQUIRED)
-find_package(nav2_msgs REQUIRED)
-
 
 include_directories(include)
 
@@ -53,30 +51,23 @@ ament_target_dependencies(ekf_node
   tf2_geometry_msgs
 )
 
-add_executable(waypoint_navigator src/waypoint_sender.cpp)
-ament_target_dependencies(waypoint_navigator
+add_executable(pattern_node src/pattern.cpp)
+ament_target_dependencies(pattern_node
   rclcpp
-  rclcpp_action
   geometry_msgs
-  nav_msgs
-  nav2_msgs
 )
-
 
 install(TARGETS
   pf_node
   kf_node
   ekf_node
-  waypoint_navigator
+  pattern_node
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY src/config
-  DESTINATION share/${PROJECT_NAME}/config
-)
-
-
-install(DIRECTORY launch config
+# Installiere nur config, wenn sie wirklich verwendet wird
+# Falls "launch" noch verwendet wird, diesen Block ggf. anpassen oder entfernen
+install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}/
 )
 

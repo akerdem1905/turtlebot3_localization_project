@@ -1,0 +1,33 @@
+[0.012s] Invoking command in '/home/apo/ProLab/build/particle_filter_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/ProLab/build/particle_filter_node -- -j12 -l12
+[0.072s] [ 25%] Built target kf_node
+[0.072s] [ 50%] Built target pf_node
+[0.072s] [ 75%] Built target ekf_node
+[0.076s] [ 87%] [32mBuilding CXX object CMakeFiles/pattern_node.dir/src/pattern.cpp.o[0m
+[3.925s] [100%] [32m[1mLinking CXX executable pattern_node[0m
+[4.094s] [100%] Built target pattern_node
+[4.106s] Invoked command in '/home/apo/ProLab/build/particle_filter_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/ProLab/build/particle_filter_node -- -j12 -l12
+[4.118s] Invoking command in '/home/apo/ProLab/build/particle_filter_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/apo/ProLab/build/particle_filter_node
+[4.127s] -- Install configuration: ""
+[4.127s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/pf_node
+[4.127s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/kf_node
+[4.127s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/ekf_node
+[4.128s] -- Installing: /home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/pattern_node
+[4.130s] -- Set non-toolchain portion of runtime path of "/home/apo/ProLab/install/particle_filter_node/lib/particle_filter_node/pattern_node" to ""
+[4.130s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//launch
+[4.130s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node//launch/start.launch.py
+[4.130s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/ament_index/resource_index/package_run_dependencies/particle_filter_node
+[4.130s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/ament_index/resource_index/parent_prefix_path/particle_filter_node
+[4.130s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/ament_prefix_path.sh
+[4.130s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/ament_prefix_path.dsv
+[4.131s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/path.sh
+[4.131s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/environment/path.dsv
+[4.131s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.bash
+[4.131s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.sh
+[4.131s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.zsh
+[4.131s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/local_setup.dsv
+[4.131s] -- Installing: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.dsv
+[4.131s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/ament_index/resource_index/packages/particle_filter_node
+[4.131s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/cmake/particle_filter_nodeConfig.cmake
+[4.131s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/cmake/particle_filter_nodeConfig-version.cmake
+[4.132s] -- Up-to-date: /home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.xml
+[4.132s] Invoked command in '/home/apo/ProLab/build/particle_filter_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/apo/ProLab/build/particle_filter_node

@@ -237,17 +237,17 @@ ekf_node/fast:
 .PHONY : ekf_node/fast
 
 #=============================================================================
-# Target rules for targets named waypoint_navigator
+# Target rules for targets named pattern_node
 
 # Build rule for target.
-waypoint_navigator: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 waypoint_navigator
-.PHONY : waypoint_navigator
+pattern_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pattern_node
+.PHONY : pattern_node
 
 # fast build rule for target.
-waypoint_navigator/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/build
-.PHONY : waypoint_navigator/fast
+pattern_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pattern_node.dir/build.make CMakeFiles/pattern_node.dir/build
+.PHONY : pattern_node/fast
 
 src/ekf.o: src/ekf.cpp.o
 .PHONY : src/ekf.o
@@ -297,6 +297,30 @@ src/kf.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kf_node.dir/build.make CMakeFiles/kf_node.dir/src/kf.cpp.s
 .PHONY : src/kf.cpp.s
 
+src/pattern.o: src/pattern.cpp.o
+.PHONY : src/pattern.o
+
+# target to build an object file
+src/pattern.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pattern_node.dir/build.make CMakeFiles/pattern_node.dir/src/pattern.cpp.o
+.PHONY : src/pattern.cpp.o
+
+src/pattern.i: src/pattern.cpp.i
+.PHONY : src/pattern.i
+
+# target to preprocess a source file
+src/pattern.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pattern_node.dir/build.make CMakeFiles/pattern_node.dir/src/pattern.cpp.i
+.PHONY : src/pattern.cpp.i
+
+src/pattern.s: src/pattern.cpp.s
+.PHONY : src/pattern.s
+
+# target to generate assembly for a file
+src/pattern.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pattern_node.dir/build.make CMakeFiles/pattern_node.dir/src/pattern.cpp.s
+.PHONY : src/pattern.cpp.s
+
 src/pf.o: src/pf.cpp.o
 .PHONY : src/pf.o
 
@@ -321,30 +345,6 @@ src/pf.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pf_node.dir/build.make CMakeFiles/pf_node.dir/src/pf.cpp.s
 .PHONY : src/pf.cpp.s
 
-src/waypoint_sender.o: src/waypoint_sender.cpp.o
-.PHONY : src/waypoint_sender.o
-
-# target to build an object file
-src/waypoint_sender.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_sender.cpp.o
-.PHONY : src/waypoint_sender.cpp.o
-
-src/waypoint_sender.i: src/waypoint_sender.cpp.i
-.PHONY : src/waypoint_sender.i
-
-# target to preprocess a source file
-src/waypoint_sender.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_sender.cpp.i
-.PHONY : src/waypoint_sender.cpp.i
-
-src/waypoint_sender.s: src/waypoint_sender.cpp.s
-.PHONY : src/waypoint_sender.s
-
-# target to generate assembly for a file
-src/waypoint_sender.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/waypoint_navigator.dir/build.make CMakeFiles/waypoint_navigator.dir/src/waypoint_sender.cpp.s
-.PHONY : src/waypoint_sender.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -362,20 +362,20 @@ help:
 	@echo "... uninstall"
 	@echo "... ekf_node"
 	@echo "... kf_node"
+	@echo "... pattern_node"
 	@echo "... pf_node"
-	@echo "... waypoint_navigator"
 	@echo "... src/ekf.o"
 	@echo "... src/ekf.i"
 	@echo "... src/ekf.s"
 	@echo "... src/kf.o"
 	@echo "... src/kf.i"
 	@echo "... src/kf.s"
+	@echo "... src/pattern.o"
+	@echo "... src/pattern.i"
+	@echo "... src/pattern.s"
 	@echo "... src/pf.o"
 	@echo "... src/pf.i"
 	@echo "... src/pf.s"
-	@echo "... src/waypoint_sender.o"
-	@echo "... src/waypoint_sender.i"
-	@echo "... src/waypoint_sender.s"
 .PHONY : help
 
 

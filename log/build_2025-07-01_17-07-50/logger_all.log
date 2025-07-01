@@ -1,0 +1,91 @@
+[0.094s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'particle_filter_node']
+[0.094s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['particle_filter_node'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7568cad20a70>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7568cae49190>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7568cae49190>>)
+[0.129s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.129s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.129s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.129s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.130s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.130s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.130s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/apo/ProLab'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.130s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.155s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'particle_filter_node'
+[0.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.155s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'particle_filter_node' build argument 'cmake_args' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'particle_filter_node' build argument 'cmake_target' from command line to 'None'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'particle_filter_node' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'particle_filter_node' build argument 'cmake_clean_cache' from command line to 'False'
+[0.170s] Level 5:colcon.colcon_core.verb:set package 'particle_filter_node' build argument 'cmake_clean_first' from command line to 'False'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'particle_filter_node' build argument 'cmake_force_configure' from command line to 'False'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'particle_filter_node' build argument 'ament_cmake_args' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'particle_filter_node' build argument 'catkin_cmake_args' from command line to 'None'
+[0.171s] Level 5:colcon.colcon_core.verb:set package 'particle_filter_node' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.171s] DEBUG:colcon.colcon_core.verb:Building package 'particle_filter_node' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/apo/ProLab/build/particle_filter_node', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/apo/ProLab/install/particle_filter_node', 'merge_install': False, 'path': '/home/apo/ProLab', 'symlink_install': False, 'test_result_base': None}
+[0.171s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.172s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.172s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/apo/ProLab' with build type 'ament_cmake'
+[0.172s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/apo/ProLab'
+[0.174s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.174s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.184s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/apo/ProLab/build/particle_filter_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/ProLab/build/particle_filter_node -- -j12 -l12
+[4.143s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/apo/ProLab/build/particle_filter_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/apo/ProLab/build/particle_filter_node -- -j12 -l12
+[4.153s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/apo/ProLab/build/particle_filter_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/apo/ProLab/build/particle_filter_node
+[4.167s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(particle_filter_node)
+[4.167s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/apo/ProLab/build/particle_filter_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/apo/ProLab/build/particle_filter_node
+[4.169s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node' for CMake module files
+[4.169s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node' for CMake config files
+[4.170s] Level 1:colcon.colcon_core.shell:create_environment_hook('particle_filter_node', 'cmake_prefix_path')
+[4.170s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/hook/cmake_prefix_path.dsv'
+[4.170s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/hook/cmake_prefix_path.sh'
+[4.171s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node/lib'
+[4.171s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node/bin'
+[4.171s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node/lib/pkgconfig/particle_filter_node.pc'
+[4.173s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node/lib/python3.12/site-packages'
+[4.173s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node/bin'
+[4.174s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.dsv'
+[4.174s] INFO:colcon.colcon_core.shell:Creating package script '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.sh'
+[4.177s] INFO:colcon.colcon_core.shell:Creating package script '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.bash'
+[4.178s] INFO:colcon.colcon_core.shell:Creating package script '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.zsh'
+[4.178s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/apo/ProLab/install/particle_filter_node/share/colcon-core/packages/particle_filter_node)
+[4.179s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(particle_filter_node)
+[4.179s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node' for CMake module files
+[4.180s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node' for CMake config files
+[4.180s] Level 1:colcon.colcon_core.shell:create_environment_hook('particle_filter_node', 'cmake_prefix_path')
+[4.180s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/hook/cmake_prefix_path.dsv'
+[4.180s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/hook/cmake_prefix_path.sh'
+[4.181s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node/lib'
+[4.181s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node/bin'
+[4.181s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node/lib/pkgconfig/particle_filter_node.pc'
+[4.181s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node/lib/python3.12/site-packages'
+[4.182s] Level 1:colcon.colcon_core.environment:checking '/home/apo/ProLab/install/particle_filter_node/bin'
+[4.182s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.dsv'
+[4.182s] INFO:colcon.colcon_core.shell:Creating package script '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.sh'
+[4.183s] INFO:colcon.colcon_core.shell:Creating package script '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.bash'
+[4.183s] INFO:colcon.colcon_core.shell:Creating package script '/home/apo/ProLab/install/particle_filter_node/share/particle_filter_node/package.zsh'
+[4.184s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/apo/ProLab/install/particle_filter_node/share/colcon-core/packages/particle_filter_node)
+[4.185s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[4.185s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[4.185s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[4.185s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[4.190s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[4.190s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[4.190s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.200s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.201s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/apo/ProLab/install/local_setup.sh'
+[4.201s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/apo/ProLab/install/_local_setup_util_sh.py'
+[4.204s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/apo/ProLab/install/setup.sh'
+[4.205s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/apo/ProLab/install/local_setup.bash'
+[4.206s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/apo/ProLab/install/setup.bash'
+[4.206s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/apo/ProLab/install/local_setup.zsh'
+[4.207s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/apo/ProLab/install/setup.zsh'

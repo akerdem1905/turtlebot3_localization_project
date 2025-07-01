@@ -1,0 +1,14 @@
+colcon build --packages-select particle_filter_node
+
+source install/setup.bash
+
+ros2 launch particle_filter_node start.launch
+
+source venv/bin/activate
+
+python3 extract_from_bag.py
+
+python3 RMSE.py
+
+ros2 bag record /odom /prediction /kf_prediction /ekf_state
+

@@ -5,8 +5,6 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 import os
-from launch.substitutions import PathJoinSubstitution
-
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
@@ -50,27 +48,26 @@ def generate_launch_description():
     )
 
     ekf_node = Node(
-    package='particle_filter_node',
-    executable='ekf_node',
-    name='ekf_filter',
-    output='screen',
-    parameters=[{'use_sim_time': True}]
+        package='particle_filter_node',
+        executable='ekf_node',
+        name='ekf_filter',
+        output='screen',
+        parameters=[{'use_sim_time': True}]
     )
 
-    waypoint_yaml = PathJoinSubstitution([
-    FindPackageShare("particle_filter_node"),  # <- dein tatsächlicher Paketname!
-    "config",
-    "waypoints.yaml"
-    ])
-
-    waypoint_node = Node(
-    package="particle_filter_node",  # <- dein tatsächlicher Paketname!
-    executable="waypoint_navigator",
-    name="waypoint_navigator",
-    output="screen",
-    parameters=[waypoint_yaml, {'use_sim_time': True}]
+    pattern_node = Node(
+        package='particle_filter_node',
+        executable='pattern_node',
+        name='pattern_driver',
+        output='screen',
+        parameters=[{
+            'pattern': 'circle_straight_circle',           # Oder 'zigzag', 'circle_straight_circle', 'circle'
+            'linear_speed': 0.2,
+            'angular_speed': 0.5,
+            'duration': 25.0,
+            'use_sim_time': True
+        }]
     )
-
 
     return LaunchDescription([
         gazebo,
@@ -78,5 +75,5 @@ def generate_launch_description():
         particle_filter_node,
         kalman_filter_node,
         ekf_node,
-        waypoint_node
+        pattern_node
     ])
