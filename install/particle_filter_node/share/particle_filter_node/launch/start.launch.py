@@ -18,6 +18,10 @@ def generate_launch_description():
     nav2_pkg = FindPackageShare('turtlebot3_navigation2').find('turtlebot3_navigation2')
     nav2_launch = os.path.join(nav2_pkg, 'launch', 'navigation2.launch.py')
 
+    # Pfad zur vorbereiteten RViz-Datei
+    pf_node_pkg = FindPackageShare('particle_filter_node').find('particle_filter_node')
+    rviz_config_path = os.path.join(pf_node_pkg, 'rviz', 'robot_view.rviz')
+
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(gazebo_launch),
         launch_arguments={'use_sim_time': use_sim_time}.items()
@@ -27,7 +31,9 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(nav2_launch),
         launch_arguments={
             'map': map_file,
-            'use_sim_time': use_sim_time
+            'use_sim_time': use_sim_time,
+            'autostart': 'true',
+            'rviz': 'false' # 🚫 Deaktiviert das zusätzliche RViz
         }.items()
     )
 
@@ -61,12 +67,20 @@ def generate_launch_description():
         name='pattern_driver',
         output='screen',
         parameters=[{
-            'pattern': 'zigzag',           # Oder 'zigzag', 'circle_straight_circle', 'circle'
+            'pattern': 'zigzag',
             'linear_speed': 0.2,
             'angular_speed': 0.5,
             'duration': 25.0,
             'use_sim_time': True
         }]
+    )
+
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        arguments=['-d', os.path.expanduser('~/ProLab/rviz/robot_view.rviz')],
+        output='screen'
     )
 
     return LaunchDescription([
@@ -75,5 +89,6 @@ def generate_launch_description():
         particle_filter_node,
         kalman_filter_node,
         ekf_node,
-        pattern_node
+        pattern_node,
+        rviz_node
     ])
