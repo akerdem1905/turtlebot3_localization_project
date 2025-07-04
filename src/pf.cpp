@@ -9,14 +9,25 @@
 #include "message_filters/subscriber.h"
 #include "message_filters/sync_policies/approximate_time.h"
 
+/**
+ * @brief Datenstruktur für einen Partikel (x, y, heading, Gewicht).
+ */
 struct PFParticle {
     double x, y, heading, weight;
     PFParticle() : x(0.0), y(0.0), heading(0.0), weight(1.0) {}
 };
 
+/**
+ * @brief ROS2-Node: Monte-Carlo-Lokalisierung mittels Partikelfilter (PF).
+ *
+ * Diese Implementierung verwendet ein einfaches Bewegungsmodell basierend auf Radencodern
+ * und ein rudimentäres Messmodell (gyro). Eine Resampling-Strategie wird angewandt,
+ * sobald die effektive Partikelanzahl unter die Hälfte fällt.
+ */
 class ParticleFilterNode : public rclcpp::Node {
 public:
     ParticleFilterNode() : Node("particle_filter_node"), gen_(std::random_device{}()) {
+        // === Parameter laden ===
         particle_count_ = declare_parameter("num_particles", 500);
         wheel_radius_ = declare_parameter("wheel_radius", 0.033);
         wheel_base_ = declare_parameter("wheelbase", 0.287);
@@ -29,13 +40,16 @@ public:
         init_spread_pos_ = declare_parameter("init_spread_pos", 0.01);
         init_spread_theta_ = declare_parameter("init_spread_theta", 0.05);
 
+        // === Partikel initialisieren ===
         initializeParticles();
 
+        // === Sensor-Callbacks ===
         imu_sub_.subscribe(this, "/imu");
         joint_sub_.subscribe(this, "/joint_states");
         sync_ = std::make_shared<message_filters::Synchronizer<SyncPolicy>>(SyncPolicy(10), imu_sub_, joint_sub_);
         sync_->registerCallback(std::bind(&ParticleFilterNode::sensorCallback, this, std::placeholders::_1, std::placeholders::_2));
 
+        // === Publisher für die Schätzung ===
         pose_pub_ = create_publisher<geometry_msgs::msg::PoseWithCovarianceStamped>("/prediction", 10);
         last_update_ = this->now();
 
@@ -55,11 +69,15 @@ private:
     std::mt19937 gen_;
     rclcpp::Time last_update_;
 
+    // ROS-Komponenten
     message_filters::Subscriber<sensor_msgs::msg::Imu> imu_sub_;
     message_filters::Subscriber<sensor_msgs::msg::JointState> joint_sub_;
     std::shared_ptr<message_filters::Synchronizer<SyncPolicy>> sync_;
     rclcpp::Publisher<geometry_msgs::msg::PoseWithCovarianceStamped>::SharedPtr pose_pub_;
 
+    /**
+     * @brief Zufällige Initialisierung der Partikel.
+     */
     void initializeParticles() {
         std::normal_distribution<double> pos_noise(0.0, init_spread_pos_);
         std::normal_distribution<double> angle_noise(0.0, init_spread_theta_);
@@ -72,6 +90,9 @@ private:
         }
     }
 
+    /**
+     * @brief Callback für synchronisierte IMU- und Encoder-Daten.
+     */
     void sensorCallback(const sensor_msgs::msg::Imu::ConstSharedPtr imu_msg,
                         const sensor_msgs::msg::JointState::ConstSharedPtr joint_msg) {
         double dt = (this->now() - last_update_).seconds();
@@ -91,6 +112,9 @@ private:
         last_update_ = this->now();
     }
 
+    /**
+     * @brief Berechne lineare und Winkelgeschwindigkeit.
+     */
     std::pair<double, double> computeWheelVelocities(const sensor_msgs::msg::JointState::ConstSharedPtr joint_msg) {
         double v_left = 0.0, v_right = 0.0;
         for (size_t i = 0; i < joint_msg->name.size(); ++i) {
@@ -104,6 +128,9 @@ private:
         return {v, omega};
     }
 
+    /**
+     * @brief Partikelbewegung basierend auf Steuerdaten.
+     */
     void predict(double dt, double v, double omega) {
         std::normal_distribution<double> trans_noise(0.0, motion_noise_trans_);
         std::normal_distribution<double> rot_noise(0.0, motion_noise_rot_);
@@ -126,14 +153,16 @@ private:
         }
     }
 
+    /**
+     * @brief Gewichtung der Partikel basierend auf Gyro-Messung.
+     */
     void correct(double v_meas, double omega_meas) {
         double sum_weights = 0.0;
         for (auto& p : particles_) {
-            // Fehler
-            double error_v = v_meas - v_meas;  // für später: partikelabhängig
+            // ⚠️ Platzhalter: nutzt aktuell keine Modellierung über p
+            double error_v = v_meas - v_meas;
             double error_omega = omega_meas - omega_meas;
 
-            // Likelihoods (momentan beide gleich, weil keine alternative Berechnung)
             double lv = std::exp(-0.5 * error_v * error_v / (measurement_noise_v_ * measurement_noise_v_));
             double lo = std::exp(-0.5 * error_omega * error_omega / (measurement_noise_omega_ * measurement_noise_omega_));
 
@@ -141,6 +170,7 @@ private:
             sum_weights += p.weight;
         }
 
+        // Normalisierung
         if (sum_weights > 0.0) {
             for (auto& p : particles_) {
                 p.weight /= sum_weights;
@@ -148,6 +178,9 @@ private:
         }
     }
 
+    /**
+     * @brief Systematisches Resampling (Low Variance).
+     */
     void resample() {
         double n_eff = 0.0;
         for (const auto& p : particles_) {
@@ -178,6 +211,9 @@ private:
         }
     }
 
+    /**
+     * @brief Mittlere Pose aus den Partikeln publizieren.
+     */
     void publishPrediction() {
         double mean_x = 0.0, mean_y = 0.0;
         double sin_sum = 0.0, cos_sum = 0.0;
@@ -189,24 +225,27 @@ private:
         }
         double avg_theta = std::atan2(sin_sum, cos_sum);
 
-        geometry_msgs::msg::PoseWithCovarianceStamped pose_msg;
-        pose_msg.header.stamp = this->now();
-        pose_msg.header.frame_id = "odom";
-        pose_msg.pose.pose.position.x = mean_x;
-        pose_msg.pose.pose.position.y = mean_y;
-        pose_msg.pose.pose.orientation.z = std::sin(avg_theta / 2.0);
-        pose_msg.pose.pose.orientation.w = std::cos(avg_theta / 2.0);
+        geometry_msgs::msg::PoseWithCovarianceStamped msg;
+        msg.header.stamp = this->now();
+        msg.header.frame_id = "odom";
+        msg.pose.pose.position.x = mean_x;
+        msg.pose.pose.position.y = mean_y;
+        msg.pose.pose.orientation.z = std::sin(avg_theta / 2.0);
+        msg.pose.pose.orientation.w = std::cos(avg_theta / 2.0);
 
-        pose_msg.pose.covariance[0] = 0.01;
-        pose_msg.pose.covariance[7] = 0.01;
-        pose_msg.pose.covariance[35] = 0.05;
+        msg.pose.covariance[0] = 0.01;
+        msg.pose.covariance[7] = 0.01;
+        msg.pose.covariance[35] = 0.05;
 
-        pose_pub_->publish(pose_msg);
+        pose_pub_->publish(msg);
 
         RCLCPP_INFO_THROTTLE(this->get_logger(), *this->get_clock(), 1000,
             "PF: x=%.3f, y=%.3f, θ=%.3f", mean_x, mean_y, avg_theta);
     }
 
+    /**
+     * @brief Begrenze Winkel auf [-π, π].
+     */
     double normalizeAngle(double angle) {
         while (angle > M_PI) angle -= 2.0 * M_PI;
         while (angle < -M_PI) angle += 2.0 * M_PI;
@@ -214,6 +253,7 @@ private:
     }
 };
 
+// === Einstiegspunkt ===
 int main(int argc, char* argv[]) {
     rclcpp::init(argc, argv);
     rclcpp::spin(std::make_shared<ParticleFilterNode>());

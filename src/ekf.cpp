@@ -11,29 +11,40 @@
 #include <mutex>
 #include <cmath>
 
+/**
+ * @brief Extended Kalman Filter (EKF) für robotische Lokalisierung.
+ *
+ * Diese Node implementiert ein 6D-EKF-Modell zur Schätzung der Pose des Roboters auf Basis
+ * von IMU- und Encoderdaten. Der Filter verwendet ein nichtlineares Bewegungsmodell und eine linearisierte
+ * Beobachtungsmatrix zur kontinuierlichen Korrektur.
+ */
 class EKFLocalization : public rclcpp::Node {
 public:
   EKFLocalization() : Node("ekf_localization_node") {
-    wheel_base_ = declare_parameter("wheel_base", 0.287);
-    wheel_radius_ = declare_parameter("wheel_radius", 0.033);
+    // === Parameterinitialisierung ===
+    wheel_base_ = declare_parameter("wheel_base", 0.287);      // Abstand zwischen den Rädern [m]
+    wheel_radius_ = declare_parameter("wheel_radius", 0.033);  // Radius der Räder [m]
 
-    x_ = Eigen::VectorXd::Zero(6);
-    u_ = Eigen::VectorXd::Zero(2);
+    // === Zustand und Matrizen vorbereiten ===
+    x_ = Eigen::VectorXd::Zero(6);   // [x, vx, y, vy, theta, omega]
+    u_ = Eigen::VectorXd::Zero(2);   // Steuerung [v, omega]
 
-    P_ = Eigen::MatrixXd::Identity(6, 6);
+    P_ = Eigen::MatrixXd::Identity(6, 6);        // Kovarianzmatrix
     P_.diagonal() << 0.01, 0.01, 0.01, 0.01, 0.01, 0.01;
 
-    Q_ = Eigen::MatrixXd::Zero(6, 6);
+    Q_ = Eigen::MatrixXd::Zero(6, 6);            // Prozessrauschen
     Q_.diagonal() << 0.001, 0.002, 0.001, 0.002, 0.001, 0.005;
 
-    R_ = Eigen::MatrixXd::Identity(3, 3);
-    R_.diagonal() << 0.02, 0.02, 0.05;  // Gyro bekommt weniger Vertrauen
+    R_ = Eigen::MatrixXd::Identity(3, 3);        // Messrauschen (vx, vy, omega)
+    R_.diagonal() << 0.02, 0.02, 0.05;
 
+    // === Synchronisierte Sensor-Subscriptions ===
     imu_sub_.subscribe(this, "/imu");
     joint_sub_.subscribe(this, "/joint_states");
     sync_ = std::make_shared<message_filters::Synchronizer<SyncPolicy>>(SyncPolicy(10), imu_sub_, joint_sub_);
     sync_->registerCallback(std::bind(&EKFLocalization::sensorCallback, this, std::placeholders::_1, std::placeholders::_2));
 
+    // === Steuerbefehl-Subscriber (cmd_vel) ===
     cmd_vel_sub_ = create_subscription<geometry_msgs::msg::TwistStamped>(
       "/cmd_vel", 10,
       [this](const geometry_msgs::msg::TwistStamped::SharedPtr msg) {
@@ -41,6 +52,7 @@ public:
         u_ << msg->twist.linear.x, msg->twist.angular.z;
       });
 
+    // === Ausgabe (geschätzter Zustand) ===
     ekf_pub_ = create_publisher<nav_msgs::msg::Odometry>("/ekf_state", 10);
     last_time_ = this->now();
     RCLCPP_INFO(get_logger(), "EKF gestartet.");
@@ -49,19 +61,25 @@ public:
 private:
   using SyncPolicy = message_filters::sync_policies::ApproximateTime<sensor_msgs::msg::Imu, sensor_msgs::msg::JointState>;
 
-  Eigen::VectorXd x_, u_;
-  Eigen::MatrixXd P_, Q_, R_;
+  // === Filterdaten ===
+  Eigen::VectorXd x_, u_;       // Zustand und Steuerung
+  Eigen::MatrixXd P_, Q_, R_;   // Kovarianzen
   double wheel_base_, wheel_radius_;
   rclcpp::Time last_time_;
   bool initialized_ = false;
   std::mutex state_mutex_;
 
+  // === ROS-Komponenten ===
   message_filters::Subscriber<sensor_msgs::msg::Imu> imu_sub_;
   message_filters::Subscriber<sensor_msgs::msg::JointState> joint_sub_;
   std::shared_ptr<message_filters::Synchronizer<SyncPolicy>> sync_;
   rclcpp::Subscription<geometry_msgs::msg::TwistStamped>::SharedPtr cmd_vel_sub_;
   rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr ekf_pub_;
 
+  /**
+   * @brief Callback bei synchroner Ankunft von IMU- und Encoderdaten.
+   * Führt Initialisierung, Prädiktion und Update aus.
+   */
   void sensorCallback(const sensor_msgs::msg::Imu::ConstSharedPtr imu,
                       const sensor_msgs::msg::JointState::ConstSharedPtr joint) {
     std::lock_guard<std::mutex> lock(state_mutex_);
@@ -71,10 +89,10 @@ private:
     if (dt <= 0.0 || dt > 1.0) return;
     last_time_ = now_time;
 
+    // === Initialisierung des Zustands ===
     if (!initialized_) {
       auto [vx, vy] = computeVelocities(joint);
-      
-      // 🧭 Initialisierung mit IMU-Yaw
+
       tf2::Quaternion q;
       tf2::fromMsg(imu->orientation, q);
       double roll, pitch, yaw;
@@ -86,25 +104,31 @@ private:
       return;
     }
 
+    // === EKF-Zyklus ===
     predict(dt);
     update(imu, joint);
     publish(now_time);
   }
 
+  /**
+   * @brief Prädiktion mit nichtlinearem Bewegungsmodell.
+   */
   void predict(double dt) {
     double theta = x_(4);
     double v = u_(0);
     double omega = u_(1);
 
-    // 🔄 Nichtlineares Bewegungsmodell
+    // Bewegungsgleichungen
     x_(0) += v * std::cos(theta) * dt;
     x_(2) += v * std::sin(theta) * dt;
     x_(4) += omega * dt;
 
+    // Zustandsableitungen
     x_(1) = v * std::cos(theta);
     x_(3) = v * std::sin(theta);
     x_(5) = omega;
 
+    // Linearisierte Übergangsmatrix
     Eigen::MatrixXd F = Eigen::MatrixXd::Identity(6, 6);
     F(0, 4) = -v * std::sin(theta) * dt;
     F(2, 4) =  v * std::cos(theta) * dt;
@@ -113,17 +137,23 @@ private:
     normalizeAngle();
   }
 
+  /**
+   * @brief Update mit gemessenen Geschwindigkeiten aus IMU & Encodern.
+   */
   void update(const sensor_msgs::msg::Imu::ConstSharedPtr imu,
               const sensor_msgs::msg::JointState::ConstSharedPtr joint) {
     auto [vx, vy] = computeVelocities(joint);
     double omega = imu->angular_velocity.z;
 
+    // Messvektor z = [vx, vy, omega]
     Eigen::VectorXd z(3); z << vx, vy, omega;
-    Eigen::VectorXd h = x_.segment<3>(1);
+    Eigen::VectorXd h = x_.segment<3>(1); // Vorhersage h(x)
 
+    // Beobachtungsmatrix H
     Eigen::MatrixXd H = Eigen::MatrixXd::Zero(3, 6);
     H(0, 1) = 1.0; H(1, 3) = 1.0; H(2, 5) = 1.0;
 
+    // Kalman-Gleichungen
     Eigen::MatrixXd S = H * P_ * H.transpose() + R_;
     Eigen::MatrixXd K = P_ * H.transpose() * S.inverse();
 
@@ -132,6 +162,9 @@ private:
     normalizeAngle();
   }
 
+  /**
+   * @brief Berechnung der linearen Geschwindigkeit aus den Radencodern.
+   */
   std::pair<double, double> computeVelocities(const sensor_msgs::msg::JointState::ConstSharedPtr joint) {
     double v_left = 0.0, v_right = 0.0;
     for (size_t i = 0; i < joint->name.size(); ++i) {
@@ -144,6 +177,9 @@ private:
     return {v * std::cos(theta), v * std::sin(theta)};
   }
 
+  /**
+   * @brief Publikation des aktuellen Zustands als Odometry-Nachricht.
+   */
   void publish(const rclcpp::Time& stamp) {
     nav_msgs::msg::Odometry msg;
     msg.header.stamp = stamp;
@@ -171,12 +207,16 @@ private:
     ekf_pub_->publish(msg);
   }
 
+  /**
+   * @brief Stellt sicher, dass der Yaw-Winkel innerhalb [-π, π] liegt.
+   */
   void normalizeAngle() {
     while (x_(4) > M_PI) x_(4) -= 2.0 * M_PI;
     while (x_(4) < -M_PI) x_(4) += 2.0 * M_PI;
   }
 };
 
+// === Einstiegspunkt ===
 int main(int argc, char** argv) {
   rclcpp::init(argc, argv);
   rclcpp::spin(std::make_shared<EKFLocalization>());
